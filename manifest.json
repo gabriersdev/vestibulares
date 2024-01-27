@@ -1,0 +1,18 @@
+{
+  "name": "Vestibulares",
+  "description": "Projeto para acessar os vestibulares no Brasil.",
+  "short_name": "vestibulares",
+  "background": "#F6F6F6",
+  "icons": [
+    {
+      "src": "... PNG",
+      "size": "16x16",
+      "type": "png"
+    },
+    {
+      "src": "... SVG",
+      "size": "16x20",
+      "type": "svg"
+    }
+  ]
+}

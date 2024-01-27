@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import url(./frameworks/bootstrap.css);
+@import url(./frameworks/bootstrap-icons.css);
+@import url(./frameworks/print.min.css);
+
+@import url(./normalize.css);
+@import url(./reset.css);
+@import url(./colors.css);
+@import url(./variables.css);
+
+@import url(./components/no-script.css);
+@import url(./components/loader.css);
+
+html{
+  scroll-behavior: smooth;
+}
+
+*{
+  --bs-btn-font-family: "Inter", sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, var(--font-default);
+}
+
+body *{
+  font-family: -apple-system, BlinkMacSystemFont, var(--font-default);
+}
+
+body{
+  background: var(--bckg-page);
+  color: var(--bckg-fonts);
+}
+
+.none{
+  display: none;
+}
+
+.block{
+  display: block;
+}
+
+.arial{
+  font-family: 'Arial', var(--font-default);
+}
+
+.swal2-html-container{
+  font-size: 1rem !important;
+}
+
+.custom-tooltip{
+  --bs-tooltip-font-size: 16px;
+  --bs-tooltip-bg: #3049FF;
+  --bs-tooltip-color: #F6F6F6;
+  --bs-tooltip-opacity: 1;
+  --bs-tooltip-margin: 1rem;
+}
