@@ -349,9 +349,8 @@ const tratamentoCampos = (input) => {
   });
 };
 
-const range = ({ min = 0, max, scale = 0 }) => {
+const range = ({ min = 0, max, scale = 1 }) => {
   const ret = new Array();
-
   if (max !== 0 && scale !== 0) {
     if (scale >= 1 && min < max) {
       for (let i = min; i < max; i += scale) {

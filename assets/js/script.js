@@ -1,7 +1,9 @@
 import exibirDadosProjeto from './modules/sobre.js';
-import { criarTooltips, popovers, tooltips } from './modules/utilitarios.js';
+import { criarTooltips, popovers, range, tooltips } from './modules/utilitarios.js';
 import dados from './modules/dados.js';
 import fns from './modules/funcoes.js';
+
+import { card } from './modules/content.js';
 
 (() => {
   // hljs.highlightAll();
@@ -51,6 +53,12 @@ import fns from './modules/funcoes.js';
             acoes.acao();
           });
         break;
+
+        case 'contribute':
+        break;
+
+        case 'active-search':
+        break;
         
         default:
           console.warn('A ação não foi implementada.');
@@ -70,5 +78,12 @@ import fns from './modules/funcoes.js';
   window.addEventListener('DOMContentLoaded', () => {
     tooltips();
     popovers();
+
+    // Teste
+    const replicateCount = 9;
+    
+    range({max: replicateCount}).forEach((e) => {
+      $('.cards').append(card.trim())
+    })
   });
 })();

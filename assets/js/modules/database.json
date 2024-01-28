@@ -1,0 +1,19 @@
+{
+  "vestibules": [
+    {
+      "name": "",
+      "university": "",
+      "short-name": "",
+      "active": true,
+      "destaque": false,
+      "CEP": "",
+      "type": "",
+      "avaliation-mec": 0,
+      "avaliation-vestibulandos": 0,
+      "edital-link": "",
+      "subscription-link": "",
+      "subscription-start": "",
+      "subscription-end": ""
+    }
+  ]
+}

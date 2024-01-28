@@ -56,16 +56,23 @@ body{
 
 /* Nav */
 .navbar{
+  z-index: 1;
   position: fixed;
   padding: 1rem;
 
   &.left{
     left: 0;
-    margin-top: 0.5rem;
   }
 
   &.right{
     right: 0;
+  }
+
+  .navbar-logo{
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 0.5rem;
+    border-radius: 5px;
   }
 
   .navbar-main{
@@ -92,26 +99,92 @@ body{
 }
 
 [data-action="contribute"]{
-  padding: 0.75rem 0.9rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid #3049FF;
-  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* color: #FFF; */
+  /* border-radius: 5px; */
   backdrop-filter: blur(20px);
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
   transition: background-color 0.2s ease-in-out;
 
   &:hover{
-    background: #3049FF;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #262A2E;
   }
 }
 
 [data-action="active-search"]{
   background-color: #3049FF;
   padding: 0.75rem 0.9rem;
-  border-radius: 1.5rem;
+  border-radius: 5rem;
   transition: scale 0.2s ease-in-out;
 
   &:hover{
-    scale: 1.1;
+    scale: 1.05;
   }
+}
+
+/* Characteristics */
+.characteristics-list{
+  margin: 1rem 0;
+
+  display: flex;
+  gap: 0.1em;
+  flex-direction: column;
+
+  .item{
+    &::before{
+      font-family: "bootstrap-icons";
+      margin-right: 0.25rem;
+    }
+
+    &.type-school::before{
+      content: "\F6FD";
+    }
+
+    &.location::before{
+      content: "\F3E7";
+    }
+  }
+}
+
+.cards{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  .card-header{
+    display: flex;
+    place-content: space-between;
+  }
+}
+
+.card{
+  .card-title{
+    font-size: 1.875rem;
+  }
+}
+
+span[data-visual-tooltip]{
+  cursor: default;
+}
+
+.select-exibition{
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+label.btn-dark{
+  background: #212529 !important;
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+}
+
+input:checked ~ .btn-dark{
+  opacity: 1;
+}
+
+.tooltip-dark{
+  --bs-tooltip-bg: #000 !important;
+  --bs-tooltip-color: #F6F6F6 !important;
 }

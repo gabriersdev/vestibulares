@@ -93,65 +93,79 @@
   <div id="root">
     <nav class="navbar left">
       <div class="navbar-main">
-        <img src="./assets/img/icons/favicon.svg" alt="Icon" class="navbar-logo">
+        <div class="navbar-logo">
+          <img src="./assets/img/icons/favicon.svg" alt="Icon">
+        </div>
       </div>
     </nav>
 
     <nav class="navbar right">
       <form action="#" method="POST">
-        <button data-action="contribute">Contribua</button>
+        <button class="btn" data-action="contribute">Contribua</button>
         <button data-action="active-search"><i class="bi bi-search"></i></button>
       </form>
     </nav>
 
     <header class="header container">
-      <div class="banner"></div>
+      <!-- <div class="banner"></div> -->
     </header>
 
     <main class="main container">
-      <div>
-        <button class="btn btn-dark">Destaque</button>
-        <button class="btn btn-dark">Novos</button>
+      <div class="form-group select-exibition">
+        <div>
+          <input type="radio" name="btn-check-exibition" class="btn-check" id="btn-check-destaque" autocomplete="off" checked>
+          <label class="btn btn-dark" for="btn-check-destaque">Destaque</label>
+        </div>
+        <div>
+          <input type="radio" name="btn-check-exibition" class="btn-check" id="btn-check-novos" autocomplete="off">
+          <label class="btn btn-dark" for="btn-check-novos">Novos</label>
+        </div>
       </div>
 
-      <br>
-
-      <div class="card">
-        <div class="card-header">Faculdade</div>
-        <div class="card-body">
-          <h4>UFMG</h4>
-          <ul>
-            <li>
-              <span></span>
-              <span>Pública</span>
-            </li>
-            <li>
-              <span></span>
-              <span>Belo Horizonte - MG</span>
-            </li>
-            <li>
-              <span></span>
-              <span>Médio</span>
-            </li>
-            <li>
-              <span></span>
-              <span>Inscrições até 27/02</span>
-            </li>
-          </ul>
-          <div>
-            <button class="btn btn-success">Inscrever</button>
-            <button class="btn btn-secondary">Lembrete</button>
+      <div class="search-elements-exibition mb-3">
+        <form action="#" method="POST">
+          <label for="search-element-exibition" class="label mb-1">Procure por um vestibular</label>
+          <div class="input-group">
+            <input type="text" id="search-elements-exibition" name="search-elements-exibition" placeholder="Vestibular da UFMG" class="form-control" autocomplete="off">
           </div>
-        </div>
+        </form>
+      </div>
+
+      <div class="cards">
+
       </div>
     </main>
   </div>
+
+  <br>
 
   <div id="load">
     <div class="overlay">
       <div class="spinner-first-load"></div>
     </div>
   </div>
+
+  <!-- Modal -->
+  <!-- TODO - Desenvolver modal de redirecionamento -->
+  <div class="card">
+    <div class="card-header">
+      <span>Aviso</span>
+    </div>
+    <div class="card-body">
+      <h4>Você será direcionado para o site da UFMG</h4>
+      <p>
+        Tenha em mãos seus documentos de identificação e escolaridade. <br>
+        Não nos responsabilizamos pelo tratamento e gestão dos seus dados. <br>
+        Também não garantimos a reserva de vaga ou a aprovação no vestibular.
+      </p>
+      <button class="btn btn-primary">Seguir para o site</button>
+      <button class="btn btn-secondary">Voltar</button>
+      <br>
+      <button class="btn btn-danger">Reportar erro</button>
+
+    </div>
+  </div>
+
   
   <script src="./assets/js/frameworks/highlights.js" crossorigin="anonymous"></script>
   <script src="./assets/js/frameworks/moment.js" async="true" crossorigin="anonymous"></script>

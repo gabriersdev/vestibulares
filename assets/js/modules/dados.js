@@ -5,7 +5,7 @@ const links = [
   },
   {
     id: 'github-projeto',
-    link: 'https://github.com/gabrieszin/[nome-repositorio]',
+    link: 'https://github.com/gabrieszin/vestibulares',
   },
 ];
 
