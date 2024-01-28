@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-bs-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,9 +40,9 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/frameworks/highlights-A11Y-dark.css">
   
-  <link rel="shortcut icon" href="./assets/img/#" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/img/icons/favicon.svg" type="image/x-icon">
   
-  <title>Document</title>
+  <title>Vestibulares</title>
   
   <script src="./assets/js/frameworks/jquery.js" defer crossorigin="anonymous"></script>
   <script src="./assets/js/frameworks/bootstrap.js" defer crossorigin="anonymous"></script>
@@ -55,7 +55,6 @@
   <script src="./assets/js/frameworks/print.min.js" defer crossorigin="anonymous"></script>
 </head>
 <body>
-  <button class="btn btn-outline-primary" data-action="acao">oi</button>
 
   <noscript>
     <div class="box-no-script">         
@@ -92,6 +91,60 @@
   </div>
   
   <div id="root">
+    <nav class="navbar left">
+      <div class="navbar-main">
+        <img src="./assets/img/icons/favicon.svg" alt="Icon" class="navbar-logo">
+      </div>
+    </nav>
+
+    <nav class="navbar right">
+      <form action="#" method="POST">
+        <button data-action="contribute">Contribua</button>
+        <button data-action="active-search"><i class="bi bi-search"></i></button>
+      </form>
+    </nav>
+
+    <header class="header container">
+      <div class="banner"></div>
+    </header>
+
+    <main class="main container">
+      <div>
+        <button class="btn btn-dark">Destaque</button>
+        <button class="btn btn-dark">Novos</button>
+      </div>
+
+      <br>
+
+      <div class="card">
+        <div class="card-header">Faculdade</div>
+        <div class="card-body">
+          <h4>UFMG</h4>
+          <ul>
+            <li>
+              <span></span>
+              <span>Pública</span>
+            </li>
+            <li>
+              <span></span>
+              <span>Belo Horizonte - MG</span>
+            </li>
+            <li>
+              <span></span>
+              <span>Médio</span>
+            </li>
+            <li>
+              <span></span>
+              <span>Inscrições até 27/02</span>
+            </li>
+          </ul>
+          <div>
+            <button class="btn btn-success">Inscrever</button>
+            <button class="btn btn-secondary">Lembrete</button>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 
   <div id="load">

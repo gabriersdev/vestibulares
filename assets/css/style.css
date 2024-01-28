@@ -53,3 +53,65 @@ body{
   --bs-tooltip-opacity: 1;
   --bs-tooltip-margin: 1rem;
 }
+
+/* Nav */
+.navbar{
+  position: fixed;
+  padding: 1rem;
+
+  &.left{
+    left: 0;
+    margin-top: 0.5rem;
+  }
+
+  &.right{
+    right: 0;
+  }
+
+  .navbar-main{
+    display: flex;
+    place-content: center;
+  }
+
+  .navbar-brand{
+    color: #F6F6F6;
+    font-weight: 300;
+  }
+}
+
+/* Header */
+.header{
+  padding-block-start: 6rem;
+  padding-block-end: 2rem;
+
+  .banner{
+    background-color: #000;
+    height: 500px;
+    border-radius: 10px;
+  }
+}
+
+[data-action="contribute"]{
+  padding: 0.75rem 0.9rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #3049FF;
+  border-radius: 50px;
+  backdrop-filter: blur(20px);
+  margin-right: 0.5rem;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover{
+    background: #3049FF;
+  }
+}
+
+[data-action="active-search"]{
+  background-color: #3049FF;
+  padding: 0.75rem 0.9rem;
+  border-radius: 1.5rem;
+  transition: scale 0.2s ease-in-out;
+
+  &:hover{
+    scale: 1.1;
+  }
+}

@@ -9,12 +9,12 @@ import fns from './modules/funcoes.js';
   // Confirmar saída da página
   window.onbeforeunload = (evento) => {
     // Tem coisa pra salvar
-    if(Array.from($('input, textarea')).filter(e => e.value.trim().length > 0).length > 0){
+    if (Array.from($('input, textarea')).filter((e) => e.value.trim().length > 0).length > 0) {
       // evento.preventDefault();
-    }else{
+    } else {
       // Não tem coisa pra salvar
     }
-  }
+  };
 
   document.querySelectorAll('[data-recarrega-pagina]').forEach((botao) => {
     botao.addEventListener('click', () => {
@@ -26,10 +26,10 @@ import fns from './modules/funcoes.js';
     const linkElementos = document.querySelectorAll('[data-link]');
     
     linkElementos.forEach((link) => {
-      if(link.dataset.link && dados.links.find((e) => e.id === link.dataset.link)){
+      if (link.dataset.link && dados.links.find((e) => e.id === link.dataset.link)) {
         link.setAttribute('href', dados.links.find((e) => e.id === link.dataset.link).link);
         link.setAttribute('rel', 'noopener noreferrer');
-      }else{
+      } else {
         console.warn('O link não foi implementado.');
       }
       
@@ -41,8 +41,8 @@ import fns from './modules/funcoes.js';
     const elementos = document.querySelectorAll('[data-action]');
     
     const acoes = {
-      'acao': fns.action
-    }
+      acao: fns.action,
+    };
     
     elementos.forEach((acao) => {
       switch (acao.dataset.action) {

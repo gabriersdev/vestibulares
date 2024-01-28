@@ -5,9 +5,9 @@
   "background": "#F6F6F6",
   "icons": [
     {
-      "src": "... PNG",
+      "src": "./assets/img/icons/favicon.svg",
       "size": "16x16",
-      "type": "png"
+      "type": "svg"
     },
     {
       "src": "... SVG",
