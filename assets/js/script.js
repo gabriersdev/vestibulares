@@ -86,4 +86,9 @@ import { card } from './modules/content.js';
       $('.cards').append(card.trim())
     })
   });
+
+  setTimeout(() => {
+    $('#modal-confirm-redirect').modal('show');
+  })
+
 })();

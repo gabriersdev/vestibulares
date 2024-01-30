@@ -147,26 +147,33 @@
 
   <!-- Modal -->
   <!-- TODO - Desenvolver modal de redirecionamento -->
-  <div class="card">
-    <div class="card-header">
-      <span>Aviso</span>
-    </div>
-    <div class="card-body">
-      <h4>Você será direcionado para o site da UFMG</h4>
-      <p>
-        Tenha em mãos seus documentos de identificação e escolaridade. <br>
-        Não nos responsabilizamos pelo tratamento e gestão dos seus dados. <br>
-        Também não garantimos a reserva de vaga ou a aprovação no vestibular.
-      </p>
-      <button class="btn btn-primary">Seguir para o site</button>
-      <button class="btn btn-secondary">Voltar</button>
-      <br>
-      <button class="btn btn-danger">Reportar erro</button>
-
+  <div class="modal" id="modal-confirm-redirect">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="card">
+          <div class="card-header">
+            <span>Aviso</span>
+          </div>
+          <div class="card-body">
+            <h4 class="title">Você será direcionado para o site da UFMG</h4>
+            <div class="alerts">
+              <ul class="list">
+                <li class="list-item">Tenha em mãos seus documentos de identificação e escolaridade.</li>
+                <li class="list-item">Não nos responsabilizamos pelo tratamento e gestão dos seus dados.</li>
+                <li class="list-item">Também não garantimos a reserva de vaga ou a aprovação no vestibular.</li>
+              </ul>
+            </div>
+            <div class="actions">
+              <button class="btn btn-primary">Seguir para o site</button>
+              <button class="btn btn-secondary">Voltar</button>
+              <button class="btn btn-danger">Reportar erro</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  
+    
   <script src="./assets/js/frameworks/highlights.js" crossorigin="anonymous"></script>
   <script src="./assets/js/frameworks/moment.js" async="true" crossorigin="anonymous"></script>
 </body>
