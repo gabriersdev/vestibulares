@@ -148,25 +148,62 @@
   <!-- Modal -->
   <!-- TODO - Desenvolver modal de redirecionamento -->
   <div class="modal" id="modal-confirm-redirect">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="card">
           <div class="card-header">
             <span>Aviso</span>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="card-body">
             <h4 class="title">Você será direcionado para o site da UFMG</h4>
-            <div class="alerts">
+            <div class="info-alert">
+              <p class="info-alert-sub">
+                Antes de seguir, saiba que:
+              </p>
               <ul class="list">
-                <li class="list-item">Tenha em mãos seus documentos de identificação e escolaridade.</li>
-                <li class="list-item">Não nos responsabilizamos pelo tratamento e gestão dos seus dados.</li>
-                <li class="list-item">Também não garantimos a reserva de vaga ou a aprovação no vestibular.</li>
+                <li class="list-item">
+                  <i class="bi bi-shield-check"></i>
+                  <span>
+                    Não garantimos a reserva de vaga ou a aprovação no vestibular.
+                  </span>
+                </li>
+                <li class="list-item">
+                  <i class="bi bi-file-earmark-text"></i>
+                  <span>Tenha em mãos seus documentos de identificação e escolaridade.</span>
+                </li>
+                <li class="list-item">
+                  <i class="bi bi-shield-exclamation"></i>
+                  <span>
+                    Não nos responsabilizamos pelo tratamento e gestão dos seus dados.
+                  </span>
+                </li>
               </ul>
             </div>
+
+            <style>
+              .actions{
+                display: flex;
+                justify-content: space-between;
+                gap: 0.3rem;
+                margin-top: 1rem;
+              }
+            </style>
+
             <div class="actions">
-              <button class="btn btn-primary">Seguir para o site</button>
-              <button class="btn btn-secondary">Voltar</button>
-              <button class="btn btn-danger">Reportar erro</button>
+              <div>
+                <button class="btn btn-primary">Seguir para o site</button>
+                <button class="btn btn-secondary"  data-bs-dismiss="modal">Voltar</button>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Reportar erro</button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Informação incorreta</a></li>
+                  <li><a class="dropdown-item" href="#">Inscrição encerrada</a></li>
+                  <li><a class="dropdown-item" href="#">Link quebrado</a></li>
+                  <li><a class="dropdown-item" href="#">Outro tipo de erro</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
