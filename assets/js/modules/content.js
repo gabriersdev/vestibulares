@@ -33,4 +33,4 @@ const card = `
 
 export {
   card,
-}
+};

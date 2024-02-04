@@ -160,7 +160,8 @@ body{
 
 .card{
   .card-title{
-    font-size: 1.875rem;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 1.75rem;
   }
 }
 
@@ -185,8 +186,13 @@ input:checked ~ .btn-dark{
 }
 
 .tooltip-dark{
+  --bs-tooltip-font-size: 16px;
   --bs-tooltip-bg: #000 !important;
   --bs-tooltip-color: #F6F6F6 !important;
+}
+
+.results-search-element-exibition{
+  display: none;
 }
 
 #modal-confirm-redirect{
@@ -198,6 +204,8 @@ input:checked ~ .btn-dark{
 
   .title{
     text-wrap: balance;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 1.75rem;
   }
 
   .info-alert{
