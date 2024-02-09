@@ -220,7 +220,7 @@ import { card } from './modules/content.js';
     });
   });
   
-  // setTimeout(() => {
-  //   $('#modal-confirm-redirect').modal('show');
-  // }, 0);
+  setTimeout(() => {
+    // $('#modal-confirm-redirect').modal('show');
+  }, 500);
 })();

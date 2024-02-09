@@ -92,9 +92,34 @@ body{
   padding-block-end: 2rem;
 
   .banner{
-    background-color: #000;
-    height: 500px;
-    border-radius: 10px;
+    background: url(../img/banner-gradient.png) center / cover no-repeat;
+    height: 450px;
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: flex-start;
+
+    .banner-titles{
+      .title-h1{
+        font-family: 'Inter Tight';
+        font-size: 3rem;
+        text-wrap: balance;
+      }
+    }
+
+    .btn.btn-secondary{
+      display: flex;
+      place-content: center;
+      vertical-align: center;
+    }
+
+    .btn.btn-secondary::after{
+      font-family: "bootstrap-icons";
+      content: "\F143";
+      margin-left: 0.25rem;
+    }
   }
 }
 
@@ -193,6 +218,10 @@ input:checked ~ .btn-dark{
 
 .results-search-element-exibition{
   display: none;
+}
+
+.modal-backdrop{
+  opacity: 0.75 !important;
 }
 
 #modal-confirm-redirect{

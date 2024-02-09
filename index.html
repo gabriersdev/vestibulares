@@ -106,8 +106,20 @@
       </form>
     </nav>
     
-    <header class="header container">
-      <!-- <div class="banner"></div> -->
+    <header class="header container" style="position: relative;">
+      <div class="banner">
+        <hgroup class="banner-titles">
+          <h1 class="title-h1">
+            Seu <b>futuro</b> aqui <br> <b>Encontre</b> os <b>vestibulares</b> de todo o <b>Brasil</b>
+          </h1>
+        </hgroup>
+        <div style="position: absolute; bottom: 3rem; display: flex; gap: 0.35rem;">
+          <button class="btn btn-secondary">Faculdades Públicas</button>
+          <button class="btn btn-secondary">Federal</button>
+          <button class="btn btn-secondary">Em destaque</button>
+          <button class="btn btn-secondary">Novos</button>
+        </div>
+      </div>
     </header>
     
     <main class="main container">
@@ -150,7 +162,7 @@
   
   <!-- Modal -->
   <!-- TODO - Desenvolver modal de redirecionamento -->
-  <div class="modal" id="modal-confirm-redirect">
+  <div class="modal fade" id="modal-confirm-redirect">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="card">
@@ -189,7 +201,7 @@
                 display: flex;
                 justify-content: space-between;
                 gap: 0.3rem;
-                margin-top: 1rem;
+                margin-top: 1.25rem;
               }
             </style>
             
@@ -201,10 +213,11 @@
               <div class="dropdown">
                 <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Reportar erro</button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Informação incorreta</a></li>
-                  <li><a class="dropdown-item" href="#">Inscrição encerrada</a></li>
-                  <li><a class="dropdown-item" href="#">Link quebrado</a></li>
-                  <li><a class="dropdown-item" href="#">Outro tipo de erro</a></li>
+                  <!-- TODO - Implementar ações -->
+                  <li><a class="dropdown-item" data-action="report-error" data-type-error="Informação incorreta" href="#">Informação incorreta</a></li>
+                  <li><a class="dropdown-item" data-action="report-error" data-type-error="Inscrição encerrada" href="#">Inscrição encerrada</a></li>
+                  <li><a class="dropdown-item" data-action="report-error" data-type-error="Link quebrado" href="#">Link quebrado</a></li>
+                  <li><a class="dropdown-item" data-action="report-error" data-type-error="Outro" href="#">Outro tipo de erro</a></li>
                 </ul>
               </div>
             </div>
@@ -216,7 +229,7 @@
   
   <!-- Footer -->
   <!-- Estilizar -->
-  <div class="container none">
+  <div class="container">
     <footer class="py-5">
       <div class="row">
         <div class="col-6 col-md-2 mb-3">
