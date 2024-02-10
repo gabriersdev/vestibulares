@@ -165,7 +165,7 @@
           </div>
 
           <div class="from-group">
-            <input type="text" class="form-control search-vestibulares" id="search-vestibulares" name="search-vestibulares" placeholder="local: ou tipo: ou vestibular">
+            <input type="search" class="form-control search-vestibulares" id="search-vestibulares" name="search-vestibulares" placeholder="local: ou tipo: ou vestibular">
           </div>
 
           <div class="search-elements-exibition">
@@ -173,7 +173,7 @@
               <div class="card card-info">
                 <div class="card-body">
                   <div class="info">
-                    <h3 class="title">Utilize flags para fazer buscas mais eficientes</h3>
+                    <h3 class="title">Utilize comandos para fazer buscas mais eficientes</h3>
                     <div class="mt-2 mb-2">
                       <kbd class="text-dark">local:</kbd>
                       <span class="text-muted">Ex: Belo Horizonte</span>
@@ -182,16 +182,6 @@
                       <kbd class="text-dark">tipo:</kbd>
                       <span class="text-muted">Pública ou Particular</span>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card card-info zero-results">
-                <div class="card-body">
-                  <img src="./assets/img/error.png" class="img" alt="">
-
-                  <div class="info">
-                    <h3 class="title">Não localizamos resultados para a sua busca</h3>
-                    <p class="description">Busque outro termo, localidade ou tipo de instituição</p>
                   </div>
                 </div>
               </div>
@@ -214,7 +204,7 @@
     <nav class="navbar right">
       <form action="#" method="POST">
         <button class="btn" data-action="contribute">Contribua</button>
-        <button data-action="active-search"><i class="bi bi-search"></i></button>
+        <button type="button" data-action="active-search-vestibulares"><i class="bi bi-search"></i></button>
       </form>
     </nav>
     
@@ -226,7 +216,7 @@
           </h1>
         </hgroup>
         <div class="form-group">
-          <button class="btn" data-action="btn-active-search"></button>
+          <button class="btn" data-action="active-search-vestibulares"></button>
         </div>
         
         <div class="actions" style="position: absolute; bottom: 3rem; display: flex; gap: 0.35rem;">

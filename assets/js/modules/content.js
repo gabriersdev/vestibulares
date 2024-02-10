@@ -25,12 +25,25 @@ const card = `
       </ul>
     </div>
     <div class="characteristics-actions">
-      <button class="btn btn-success">Inscrever</button>
-      <button class="btn btn-dark">Lembrete</button>
+      <button type="button" class="btn btn-success">Inscrever</button>
+      <button type="button" class="btn btn-dark">Lembrete</button>
     </div>
   </div>
 </div>`;
 
+const card_no_results = `
+<div class="card card-info zero-results">
+<div class="card-body">
+  <img src="./assets/img/error.png" class="img" alt="">
+
+  <div class="info">
+    <h3 class="title">Não localizamos resultados para a sua busca</h3>
+    <p class="description">Busque outro termo, localidade ou tipo de instituição</p>
+  </div>
+</div>
+</div>`;
+
 export {
   card,
+  card_no_results,
 };

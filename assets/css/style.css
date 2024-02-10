@@ -85,6 +85,17 @@ body{
     color: #F6F6F6;
     font-weight: 300;
   }
+
+  [data-action="active-search-vestibulares"]{
+    background-color: #3049FF;
+    padding: 0.75rem 0.9rem;
+    border-radius: 5rem;
+    transition: scale 0.2s ease-in-out;
+  
+    &:hover{
+      scale: 1.05;
+    }
+  }
 }
 
 /* Header */
@@ -114,7 +125,7 @@ body{
       }
     }
 
-    [data-action="btn-active-search"]{
+    [data-action="active-search-vestibulares"]{
       background-color: rgba(255, 255, 255, 0.1);
       border-color: rgba(255, 255, 255, 0.1);
       border-radius: 50px;
@@ -170,17 +181,6 @@ body{
   &:hover{
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: #262A2E;
-  }
-}
-
-[data-action="active-search"]{
-  background-color: #3049FF;
-  padding: 0.75rem 0.9rem;
-  border-radius: 5rem;
-  transition: scale 0.2s ease-in-out;
-
-  &:hover{
-    scale: 1.05;
   }
 }
 

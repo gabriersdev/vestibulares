@@ -59,7 +59,15 @@ import { card } from './modules/content.js';
         case 'contribute':
         break;
         
-        case 'active-search':
+        case 'active-search-vestibulares':
+        $(elemento).on('click', (event) => {
+          event.preventDefault();
+          const modal = $('#modal-search');
+          $(modal).modal('show');
+          setTimeout(() => {
+            $(modal).find('input[type=search]').focus();
+          }, 500);
+        });
         break;
         
         case 'search-element-exibition':
@@ -221,7 +229,7 @@ import { card } from './modules/content.js';
   });
   
   setTimeout(() => {
-    $('#modal-search').modal('show');
+    
     // $('#modal-confirm-redirect').modal('show');
   }, 500);
 })();
