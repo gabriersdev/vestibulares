@@ -221,6 +221,7 @@ import { card } from './modules/content.js';
   });
   
   setTimeout(() => {
+    $('#modal-search').modal('show');
     // $('#modal-confirm-redirect').modal('show');
   }, 500);
 })();

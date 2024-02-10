@@ -28,6 +28,7 @@ body *{
 body{
   background: var(--bckg-page);
   color: var(--bckg-fonts);
+  user-select: none;
 }
 
 .none{
@@ -103,22 +104,57 @@ body{
 
     .banner-titles{
       .title-h1{
-        font-family: 'Inter Tight';
+        font-family: 'Inter Tight', 'Inter', sans-serif;
         font-size: 3rem;
         text-wrap: balance;
+        
+        *{
+          font-family: 'Inter Tight', 'Inter', sans-serif;
+        }        
       }
     }
 
-    .btn.btn-secondary{
+    [data-action="btn-active-search"]{
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50px;
+      margin-top: 0.5rem;
       display: flex;
       place-content: center;
-      vertical-align: center;
+
+      &::before{
+        content: "Pesquisar";
+      }
+
+      &::after{
+        margin-left: 0.5rem;
+        font-family: "bootstrap-icons";
+        content: "\F52A";
+      }
+
+      &:hover{
+        background-color: rgba(255, 255, 255, 0.2);
+      }
     }
 
-    .btn.btn-secondary::after{
-      font-family: "bootstrap-icons";
-      content: "\F143";
-      margin-left: 0.25rem;
+    .actions{
+      .btn{
+        display: flex;
+        place-content: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.1);
+        color: #F6F6F6;
+        
+        &:hover{
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      .btn::after{
+        font-family: "bootstrap-icons";
+        content: "\F143";
+        margin-left: 0.45rem;
+      }
     }
   }
 }
@@ -177,16 +213,14 @@ body{
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-  .card-header{
-    display: flex;
-    place-content: space-between;
-  }
-}
-
-.card{
   .card-title{
     font-family: 'Inter Tight', sans-serif;
     font-size: 1.75rem;
+  }
+
+  .card-header{
+    display: flex;
+    place-content: space-between;
   }
 }
 
@@ -222,6 +256,74 @@ input:checked ~ .btn-dark{
 
 .modal-backdrop{
   opacity: 0.75 !important;
+}
+
+#modal-search{
+  &.show{
+    backdrop-filter: blur(25px);
+  }
+
+  .modal-content{
+    padding: 0.25rem;
+    background: unset;
+    border: none;
+  }
+
+  .modal-header{
+    padding: 1rem 0;
+    border: unset;
+  }
+
+  .search-vestibulares{
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    font-size: 1.35rem;
+    color: #FFF;
+  }
+
+  .search-elements-exibition{
+    .card{
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(25px);
+      
+      &.card-info{
+        display: flex;
+        /* place-content: center; */
+        /* place-items: center; */
+
+        .card-body{
+          display: flex;
+          flex-direction: column;
+          place-content: center;
+          place-items: center;
+          max-width: 400px;
+        }
+
+        .info{
+          margin-top: 0.25rem;
+          text-wrap: balance;
+        }
+
+        .title{
+          font-weight: 500;
+          font-size: 1.35rem;
+          padding-bottom: 0;
+          
+        }
+
+        .description{
+          margin-top: 0.5rem;
+        }
+
+        .img{
+          width: 150px;
+          height: 150px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
 }
 
 #modal-confirm-redirect{

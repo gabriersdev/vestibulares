@@ -88,6 +88,118 @@
         </div>
       </div>
     </div>
+    
+    <!-- Modal -->
+    <!-- TODO - Desenvolver modal de redirecionamento -->
+    <div class="modal fade" id="modal-confirm-redirect">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="card">
+            <div class="card-header">
+              <span>Aviso</span>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="card-body">
+              <h4 class="title">Você será direcionado para o site da UFMG</h4>
+              <div class="info-alert">
+                <p class="info-alert-sub">
+                  Antes de seguir, saiba que:
+                </p>
+                <ul class="list">
+                  <li class="list-item">
+                    <i class="bi bi-shield-check"></i>
+                    <span>
+                      Não garantimos a reserva de vaga ou a aprovação no vestibular.
+                    </span>
+                  </li>
+                  <li class="list-item">
+                    <i class="bi bi-file-earmark-text"></i>
+                    <span>Tenha em mãos seus documentos de identificação e escolaridade.</span>
+                  </li>
+                  <li class="list-item">
+                    <i class="bi bi-shield-exclamation"></i>
+                    <span>
+                      Não nos responsabilizamos pelo tratamento e gestão dos seus dados.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              
+              <style>
+                .actions{
+                  display: flex;
+                  justify-content: space-between;
+                  gap: 0.3rem;
+                  margin-top: 1.25rem;
+                }
+              </style>
+              
+              <div class="actions">
+                <div>
+                  <button class="btn btn-primary">Seguir para o site</button>
+                  <button class="btn btn-secondary"  data-bs-dismiss="modal">Voltar</button>
+                </div>
+                <div class="dropdown">
+                  <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Reportar erro</button>
+                  <ul class="dropdown-menu">
+                    <!-- TODO - Implementar ações -->
+                    <li><a class="dropdown-item" data-action="report-error" data-type-error="Informação incorreta" href="#">Informação incorreta</a></li>
+                    <li><a class="dropdown-item" data-action="report-error" data-type-error="Inscrição encerrada" href="#">Inscrição encerrada</a></li>
+                    <li><a class="dropdown-item" data-action="report-error" data-type-error="Link quebrado" href="#">Link quebrado</a></li>
+                    <li><a class="dropdown-item" data-action="report-error" data-type-error="Outro" href="#">Outro tipo de erro</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="modal-search" aria-hidden="true" aria-labelledby="modal-search-label" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="title"><label for="search-vestibulares">Procure por um vestibular</label></h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="from-group">
+            <input type="text" class="form-control search-vestibulares" id="search-vestibulares" name="search-vestibulares" placeholder="local: ou tipo: ou vestibular">
+          </div>
+
+          <div class="search-elements-exibition">
+            <div class="cards">
+              <div class="card card-info">
+                <div class="card-body">
+                  <div class="info">
+                    <h3 class="title">Utilize flags para fazer buscas mais eficientes</h3>
+                    <div class="mt-2 mb-2">
+                      <kbd class="text-dark">local:</kbd>
+                      <span class="text-muted">Ex: Belo Horizonte</span>
+                    </div>
+                    <div class="mt-2 mb-2">
+                      <kbd class="text-dark">tipo:</kbd>
+                      <span class="text-muted">Pública ou Particular</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card-info zero-results">
+                <div class="card-body">
+                  <img src="./assets/img/error.png" class="img" alt="">
+
+                  <div class="info">
+                    <h3 class="title">Não localizamos resultados para a sua busca</h3>
+                    <p class="description">Busque outro termo, localidade ou tipo de instituição</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   
   <div id="root">
@@ -110,14 +222,18 @@
       <div class="banner">
         <hgroup class="banner-titles">
           <h1 class="title-h1">
-            Seu <b>futuro</b> aqui <br> <b>Encontre</b> os <b>vestibulares</b> de todo o <b>Brasil</b>
+            Seu <b class="bold">futuro aqui</b> <br> <b class="bold">Encontre vestibulares</b> de todo o <b class="bold">Brasil</b>
           </h1>
         </hgroup>
-        <div style="position: absolute; bottom: 3rem; display: flex; gap: 0.35rem;">
-          <button class="btn btn-secondary">Faculdades Públicas</button>
-          <button class="btn btn-secondary">Federal</button>
-          <button class="btn btn-secondary">Em destaque</button>
-          <button class="btn btn-secondary">Novos</button>
+        <div class="form-group">
+          <button class="btn" data-action="btn-active-search"></button>
+        </div>
+        
+        <div class="actions" style="position: absolute; bottom: 3rem; display: flex; gap: 0.35rem;">
+          <button class="btn">Faculdades Públicas</button>
+          <button class="btn">Federal</button>
+          <button class="btn">Em destaque</button>
+          <button class="btn">Novos</button>
         </div>
       </div>
     </header>
@@ -160,73 +276,6 @@
     </div>
   </div>
   
-  <!-- Modal -->
-  <!-- TODO - Desenvolver modal de redirecionamento -->
-  <div class="modal fade" id="modal-confirm-redirect">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="card">
-          <div class="card-header">
-            <span>Aviso</span>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="card-body">
-            <h4 class="title">Você será direcionado para o site da UFMG</h4>
-            <div class="info-alert">
-              <p class="info-alert-sub">
-                Antes de seguir, saiba que:
-              </p>
-              <ul class="list">
-                <li class="list-item">
-                  <i class="bi bi-shield-check"></i>
-                  <span>
-                    Não garantimos a reserva de vaga ou a aprovação no vestibular.
-                  </span>
-                </li>
-                <li class="list-item">
-                  <i class="bi bi-file-earmark-text"></i>
-                  <span>Tenha em mãos seus documentos de identificação e escolaridade.</span>
-                </li>
-                <li class="list-item">
-                  <i class="bi bi-shield-exclamation"></i>
-                  <span>
-                    Não nos responsabilizamos pelo tratamento e gestão dos seus dados.
-                  </span>
-                </li>
-              </ul>
-            </div>
-            
-            <style>
-              .actions{
-                display: flex;
-                justify-content: space-between;
-                gap: 0.3rem;
-                margin-top: 1.25rem;
-              }
-            </style>
-            
-            <div class="actions">
-              <div>
-                <button class="btn btn-primary">Seguir para o site</button>
-                <button class="btn btn-secondary"  data-bs-dismiss="modal">Voltar</button>
-              </div>
-              <div class="dropdown">
-                <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Reportar erro</button>
-                <ul class="dropdown-menu">
-                  <!-- TODO - Implementar ações -->
-                  <li><a class="dropdown-item" data-action="report-error" data-type-error="Informação incorreta" href="#">Informação incorreta</a></li>
-                  <li><a class="dropdown-item" data-action="report-error" data-type-error="Inscrição encerrada" href="#">Inscrição encerrada</a></li>
-                  <li><a class="dropdown-item" data-action="report-error" data-type-error="Link quebrado" href="#">Link quebrado</a></li>
-                  <li><a class="dropdown-item" data-action="report-error" data-type-error="Outro" href="#">Outro tipo de erro</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
   <!-- Footer -->
   <!-- Estilizar -->
   <div class="container">
@@ -242,7 +291,7 @@
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
           </ul>
         </div>
-  
+        
         <div class="col-6 col-md-2 mb-3">
           <h5>Section</h5>
           <ul class="nav flex-column">
@@ -253,7 +302,7 @@
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
           </ul>
         </div>
-  
+        
         <div class="col-6 col-md-2 mb-3">
           <h5>Section</h5>
           <ul class="nav flex-column">
@@ -264,7 +313,7 @@
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
           </ul>
         </div>
-  
+        
         <div class="col-md-5 offset-md-1 mb-3">
           <form>
             <h5>Subscribe to our newsletter</h5>
@@ -277,7 +326,7 @@
           </form>
         </div>
       </div>
-  
+      
       <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
         <p>© 2023 Company, Inc. All rights reserved.</p>
         <ul class="list-unstyled d-flex">
