@@ -1,3 +1,4 @@
 .editorconfig
 .eslintrc.json
 node_modules/*
+rascunho.js

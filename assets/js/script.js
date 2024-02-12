@@ -226,10 +226,33 @@ import { card } from './modules/content.js';
     range({ max: replicateCount }).forEach(() => {
       $('.cards').append(card.trim());
     });
+
+    $('#search-vestibulares').on('input', (event) => {
+      const value = $(event.target).val().trim();
+
+      if (value.length === 0) {
+        return null;
+      }
+    });
   });
   
   setTimeout(() => {
-    
     // $('#modal-confirm-redirect').modal('show');
   }, 500);
 })();
+
+const value = 'tipo:publica local: Belo Horizonte';
+const valueHasLocal = value.match(/local:\s*[\wÀ-ú\s]+/gi);
+const valueHasTipo = value.match(/tipo:\s*(p[u|ú]blica|particular)+/gi);
+
+if (valueHasLocal) {
+  let sanitized = valueHasLocal[0];
+  if (sanitized.match(/tipo/gi)) sanitized = sanitized.replace(/tipo/gi, '').trim(); 
+  console.log(sanitized.replace(/local:/gi, '').trim());
+}
+
+if (valueHasTipo) {
+  let sanitized = valueHasTipo[0];
+  if (sanitized.match(/local/gi)) sanitized = sanitized.replace(/local/gi, '').trim(); 
+  console.log(sanitized.replace(/tipo/gi, '').trim());
+}
