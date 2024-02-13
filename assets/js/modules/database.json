@@ -1,7 +1,8 @@
 {
   "vestibules": [
     {
-      "name": "Fundação Universidade Federal de Tocantins",
+      "id": 1,
+      "name": "Universidade Federal de Tocantins",
       "university": "Fundação Universidade Federal de Tocantins",
       "short-name": "UFT",
       "active": true,
@@ -16,6 +17,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 2,
       "name": "Universidade Federal de Alagoas",
       "university": "Universidade Federal de Alagoas",
       "short-name": "UFA",
@@ -31,6 +33,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 3,
       "name": "Universidade Federal da Bahia",
       "university": "Universidade Federal da Bahia",
       "short-name": "UFB",
@@ -46,6 +49,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 4,
       "name": "Universidade Federal de Campina Grande",
       "university": "Universidade Federal de Campina Grande",
       "short-name": "UFCG",
@@ -61,6 +65,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 5,
       "name": "Universidade Federal do Ceará",
       "university": "Universidade Federal do Ceará",
       "short-name": "UFC",
@@ -76,6 +81,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 6,
       "name": "Universidade Federal do Espírito Santo",
       "university": "Universidade Federal do Espírito Santo",
       "short-name": "UFES",
@@ -91,6 +97,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 7,
       "name": "Universidade Federal de Goiás",
       "university": "Universidade Federal de Goiás",
       "short-name": "UFG",
@@ -106,6 +113,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 8,
       "name": "Universidade Federal Fluminense",
       "university": "Universidade Federal Fluminense",
       "short-name": "UFF",
@@ -121,6 +129,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 9,
       "name": "Universidade Federal de Juiz de Fora",
       "university": "Universidade Federal de Juiz de Fora",
       "short-name": "UFJF",
@@ -136,6 +145,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 10,
       "name": "Universidade Federal de Minas Gerais",
       "university": "Universidade Federal de Minas Gerais",
       "short-name": "UFMG",
@@ -151,6 +161,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 11,
       "name": "Universidade Federal do Pará",
       "university": "Universidade Federal do Pará",
       "short-name": "UFP",
@@ -166,6 +177,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 12,
       "name": "Universidade Federal da Paraíba",
       "university": "Universidade Federal da Paraíba",
       "short-name": "UFP",
@@ -181,6 +193,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 13,
       "name": "Universidade Federal do Paraná",
       "university": "Universidade Federal do Paraná",
       "short-name": "UFP",
@@ -196,6 +209,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 14,
       "name": "Universidade Federal de Pernambuco",
       "university": "Universidade Federal de Pernambuco",
       "short-name": "UFP",
@@ -211,6 +225,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 15,
       "name": "Universidade Federal do Rio Grande do Norte",
       "university": "Universidade Federal do Rio Grande do Norte",
       "short-name": "UFRGN",
@@ -226,6 +241,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 16,
       "name": "Universidade Federal do Rio Grande do Sul",
       "university": "Universidade Federal do Rio Grande do Sul",
       "short-name": "UFRGS",
@@ -241,6 +257,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 17,
       "name": "Universidade Federal do Rio de Janeiro",
       "university": "Universidade Federal do Rio de Janeiro",
       "short-name": "UFRJ",
@@ -256,6 +273,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 18,
       "name": "Universidade Federal de Santa Catarina",
       "university": "Universidade Federal de Santa Catarina",
       "short-name": "UFSC",
@@ -271,6 +289,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 19,
       "name": "Universidade Federal de Santa Maria",
       "university": "Universidade Federal de Santa Maria",
       "short-name": "UFSM",
@@ -286,6 +305,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 20,
       "name": "Universidade Federal Rural de Pernambuco",
       "university": "Universidade Federal Rural de Pernambuco",
       "short-name": "UFRP",
@@ -301,6 +321,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 21,
       "name": "Universidade Federal Rural do Rio de Janeiro",
       "university": "Universidade Federal Rural do Rio de Janeiro",
       "short-name": "UFRRJ",
@@ -316,7 +337,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Federal de Roraima",
+      "id": 22,
+      "name": "Universidade Federal de Roraima",
       "university": "Fundação Universidade Federal de Roraima",
       "short-name": "UFR",
       "active": true,
@@ -331,6 +353,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 23,
       "name": "Universidade Federal de São Paulo",
       "university": "Universidade Federal de São Paulo",
       "short-name": "UFSP",
@@ -346,6 +369,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 24,
       "name": "Universidade Federal de Lavras",
       "university": "Universidade Federal de Lavras",
       "short-name": "UFL",
@@ -361,7 +385,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Federal de Rondônia",
+      "id": 25,
+      "name": "Universidade Federal de Rondônia",
       "university": "Fundação Universidade Federal de Rondônia",
       "short-name": "UFR",
       "active": true,
@@ -376,6 +401,7 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
+      "id": 26,
       "name": "Universidade do Rio de Janeiro",
       "university": "Universidade do Rio de Janeiro",
       "short-name": "URJ",
@@ -391,7 +417,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Amazonas",
+      "id": 27,
+      "name": "Universidade Amazonas",
       "university": "Fundação Universidade Amazonas",
       "short-name": "UA",
       "active": true,
@@ -406,7 +433,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Brasília",
+      "id": 28,
+      "name": "Universidade Brasília",
       "university": "Fundação Universidade Brasília",
       "short-name": "UB",
       "active": true,
@@ -421,7 +449,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Maranhão",
+      "id": 29,
+      "name": "Universidade Maranhão",
       "university": "Fundação Universidade Maranhão",
       "short-name": "UM",
       "active": true,
@@ -436,7 +465,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Rio Grande",
+      "id": 30,
+      "name": "Universidade Rio Grande",
       "university": "Fundação Universidade Rio Grande",
       "short-name": "URG",
       "active": true,
@@ -451,7 +481,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Federal de Uberlândia",
+      "id": 31,
+      "name": "Universidade Federal de Uberlândia",
       "university": "Fundação Universidade Federal de Uberlândia",
       "short-name": "UFU",
       "active": true,
@@ -466,7 +497,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Federal Acre",
+      "id": 32,
+      "name": "Universidade Federal Acre",
       "university": "Fundação Universidade Federal Acre",
       "short-name": "UFA",
       "active": true,
@@ -481,7 +513,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Federal Mato Grosso",
+      "id": 33,
+      "name": "Universidade Federal Mato Grosso",
       "university": "Fundação Universidade Federal Mato Grosso",
       "short-name": "UFMG",
       "active": true,
@@ -496,7 +529,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Federal Ouro Preto",
+      "id": 34,
+      "name": "Universidade Federal Ouro Preto",
       "university": "Fundação Universidade Federal Ouro Preto",
       "short-name": "UFOP",
       "active": true,
@@ -511,7 +545,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Federal Pelotas",
+      "id": 35,
+      "name": "Universidade Federal Pelotas",
       "university": "Fundação Universidade Federal Pelotas",
       "short-name": "UFP",
       "active": true,
@@ -526,7 +561,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Federal Piauí",
+      "id": 36,
+      "name": "Universidade Federal Piauí",
       "university": "Fundação Universidade Federal Piauí",
       "short-name": "UFP",
       "active": true,
@@ -541,7 +577,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Federal São Carlos",
+      "id": 37,
+      "name": "Universidade Federal São Carlos",
       "university": "Fundação Universidade Federal São Carlos",
       "short-name": "UFSC",
       "active": true,
@@ -556,7 +593,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Federal Sergipe",
+      "id": 38,
+      "name": "Universidade Federal Sergipe",
       "university": "Fundação Universidade Federal Sergipe",
       "short-name": "UFS",
       "active": true,
@@ -571,7 +609,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Federal Viçosa",
+      "id": 39,
+      "name": "Universidade Federal Viçosa",
       "university": "Fundação Universidade Federal Viçosa",
       "short-name": "UFV",
       "active": true,
@@ -586,7 +625,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Federal Mato Grosso do Sul",
+      "id": 40,
+      "name": "Universidade Federal Mato Grosso do Sul",
       "university": "Fundação Universidade Federal Mato Grosso do Sul",
       "short-name": "UFMGS",
       "active": true,
@@ -601,7 +641,8 @@
       "subscription-end": "2024-12-31 23:59:59"
     },
     {
-      "name": "Fundação Universidade Federal Amapá",
+      "id": 41,
+      "name": "Universidade Federal Amapá",
       "university": "Fundação Universidade Federal Amapá",
       "short-name": "UFA",
       "active": true,

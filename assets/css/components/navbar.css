@@ -1,0 +1,42 @@
+/* Nav */
+.navbar{
+  z-index: 1;
+  position: fixed;
+  padding: 1rem;
+  
+  &.left{
+    left: 0;
+  }
+  
+  &.right{
+    right: 0;
+  }
+  
+  .navbar-logo{
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  
+  .navbar-main{
+    display: flex;
+    place-content: center;
+  }
+  
+  .navbar-brand{
+    color: #F6F6F6;
+    font-weight: 300;
+  }
+  
+  [data-action="active-search-vestibulares"]{
+    background-color: #3049FF;
+    padding: 0.75rem 0.9rem;
+    border-radius: 5rem;
+    transition: scale 0.2s ease-in-out;
+    
+    &:hover{
+      scale: 1.05;
+    }
+  }
+}

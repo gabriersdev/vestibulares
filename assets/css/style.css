@@ -11,6 +11,12 @@
 
 @import url(./components/no-script.css);
 @import url(./components/loader.css);
+@import url(./components/header.css);
+@import url(./components/navbar.css);
+@import url(./components/footer.css);
+@import url(./components/cards.css);
+@import url(./components/modal-confirm-redirect.css);
+@import url(./components/modal-search.css);
 
 html{
   scroll-behavior: smooth;
@@ -55,121 +61,6 @@ body{
   --bs-tooltip-margin: 1rem;
 }
 
-/* Nav */
-.navbar{
-  z-index: 1;
-  position: fixed;
-  padding: 1rem;
-
-  &.left{
-    left: 0;
-  }
-
-  &.right{
-    right: 0;
-  }
-
-  .navbar-logo{
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    padding: 0.5rem;
-    border-radius: 5px;
-  }
-
-  .navbar-main{
-    display: flex;
-    place-content: center;
-  }
-
-  .navbar-brand{
-    color: #F6F6F6;
-    font-weight: 300;
-  }
-
-  [data-action="active-search-vestibulares"]{
-    background-color: #3049FF;
-    padding: 0.75rem 0.9rem;
-    border-radius: 5rem;
-    transition: scale 0.2s ease-in-out;
-  
-    &:hover{
-      scale: 1.05;
-    }
-  }
-}
-
-/* Header */
-.header{
-  padding-block-start: 6rem;
-  padding-block-end: 2rem;
-
-  .banner{
-    background: url(../img/banner-gradient.png) center / cover no-repeat;
-    height: 450px;
-    border-radius: 15px;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    place-content: center;
-    place-items: flex-start;
-
-    .banner-titles{
-      .title-h1{
-        font-family: 'Inter Tight', 'Inter', sans-serif;
-        font-size: 3rem;
-        text-wrap: balance;
-        
-        *{
-          font-family: 'Inter Tight', 'Inter', sans-serif;
-        }        
-      }
-    }
-
-    [data-action="active-search-vestibulares"]{
-      background-color: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.1);
-      border-radius: 50px;
-      margin-top: 0.5rem;
-      display: flex;
-      place-content: center;
-
-      &::before{
-        content: "Pesquisar";
-      }
-
-      &::after{
-        margin-left: 0.5rem;
-        font-family: "bootstrap-icons";
-        content: "\F52A";
-      }
-
-      &:hover{
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-    }
-
-    .actions{
-      .btn{
-        display: flex;
-        place-content: center;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-color: rgba(255, 255, 255, 0.1);
-        color: #F6F6F6;
-        
-        &:hover{
-          background-color: rgba(255, 255, 255, 0.2);
-        }
-      }
-
-      .btn::after{
-        font-family: "bootstrap-icons";
-        content: "\F143";
-        margin-left: 0.45rem;
-      }
-    }
-  }
-}
-
 [data-action="contribute"]{
   border: 1px solid rgba(255, 255, 255, 0.1);
   /* color: #FFF; */
@@ -177,50 +68,10 @@ body{
   backdrop-filter: blur(20px);
   margin-right: 0.25rem;
   transition: background-color 0.2s ease-in-out;
-
+  
   &:hover{
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: #262A2E;
-  }
-}
-
-/* Characteristics */
-.characteristics-list{
-  margin: 1rem 0;
-
-  display: flex;
-  gap: 0.1em;
-  flex-direction: column;
-
-  .item{
-    &::before{
-      font-family: "bootstrap-icons";
-      margin-right: 0.25rem;
-    }
-
-    &.type-school::before{
-      content: "\F6FD";
-    }
-
-    &.location::before{
-      content: "\F3E7";
-    }
-  }
-}
-
-.cards{
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-
-  .card-title{
-    font-family: 'Inter Tight', sans-serif;
-    font-size: 1.75rem;
-  }
-
-  .card-header{
-    display: flex;
-    place-content: space-between;
   }
 }
 
@@ -256,120 +107,4 @@ input:checked ~ .btn-dark{
 
 .modal-backdrop{
   opacity: 0.75 !important;
-}
-
-#modal-search{
-  &.show{
-    backdrop-filter: blur(25px);
-  }
-
-  .modal-content{
-    padding: 0.25rem;
-    background: unset;
-    border: none;
-  }
-
-  .modal-header{
-    padding: 1rem 0;
-    border: unset;
-  }
-
-  .search-vestibulares{
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    font-size: 1.35rem;
-    color: #FFF;
-  }
-
-  .search-elements-exibition{
-    .card{
-      background-color: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(25px);
-      
-      &.card-info{
-        display: flex;
-        /* place-content: center; */
-        /* place-items: center; */
-
-        .card-body{
-          display: flex;
-          flex-direction: column;
-          place-content: center;
-          place-items: center;
-          max-width: 400px;
-        }
-
-        .info{
-          margin-top: 0.25rem;
-          text-wrap: balance;
-        }
-
-        .title{
-          font-weight: 500;
-          font-size: 1.35rem;
-          padding-bottom: 0;
-          
-        }
-
-        .description{
-          margin-top: 0.5rem;
-        }
-
-        .img{
-          width: 150px;
-          height: 150px;
-          object-fit: contain;
-        }
-      }
-    }
-  }
-}
-
-#modal-confirm-redirect{
-  .modal-content .card > .card-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between
-  }
-
-  .title{
-    text-wrap: balance;
-    font-family: 'Inter Tight', sans-serif;
-    font-size: 1.75rem;
-  }
-
-  .info-alert{
-    .info-alert-sub{
-      margin-bottom: 0.5rem;
-    }
-
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .list{
-    cursor: default;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.35rem;
-    
-    .list-item{
-      text-wrap: balance;
-      opacity: 0.8;
-      transition: opacity 0.2s ease-in-out;
-
-      padding: 0.5rem 0.65rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-
-      background: linear-gradient(30deg, #FFFFFF05 0%, #FFFFFF05 100%);
-
-      border-radius: 5px;
-
-      &:hover{
-        opacity: 1;
-      }
-    }
-  }
 }

@@ -5,45 +5,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="manifest" href="./manifest.json">
-  
-  <!-- 
+
+  <!--
     <meta name="robots" content="index, nofollow">
     <meta name="keywords" content="#">
     <meta name="author" content="Gabriel Ribeiro">
     <meta name="description" content="#">
     <meta name="theme-color" content="#">
-    
+
     <meta property="og:title" content="#">
     <meta property="og:description" content="#">
     <meta property="og:url" content="#">
     <meta property="og:image" content="#">
-    <meta property="og:image:secure_url" content="#"> 
-    <meta property="og:image:type" content="image/png"> 
-    <meta property="og:image:width" content="400"> 
-    <meta property="og:image:height" content="300"> 
-    
+    <meta property="og:image:secure_url" content="#">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="300">
+
     <meta name="twitter:title" content="#">
   -->
-  
-  <!-- 
-    <meta http-equiv="Content-Security-Policy" 
-    content="default-src 'self'; 
-    style-src 'self' 'unsafe-inline'; 
+
+  <!--
+    <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+    style-src 'self' 'unsafe-inline';
     style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    img-src 'self' data:; 
-    font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; 
-    script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/ https://code.jquery.com/ https://cdnjs.cloudflare.com/; 
+    img-src 'self' data:;
+    font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/;
+    script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/ https://code.jquery.com/ https://cdnjs.cloudflare.com/;
     frame-src 'self';
-    connect-src 'self';">    
+    connect-src 'self';">
   -->
-  
+
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/frameworks/highlights-A11Y-dark.css">
-  
+
   <link rel="shortcut icon" href="./assets/img/icons/favicon.svg" type="image/x-icon">
-  
+
   <title>Vestibulares</title>
-  
+
   <script src="./assets/js/frameworks/jquery.js" defer crossorigin="anonymous"></script>
   <script src="./assets/js/frameworks/bootstrap.js" defer crossorigin="anonymous"></script>
   <script src="./assets/js/frameworks/pooper.js" defer crossorigin="anonymous"></script>
@@ -55,12 +55,12 @@
   <script src="./assets/js/frameworks/print.min.js" defer crossorigin="anonymous"></script>
 </head>
 <body>
-  
+
   <noscript>
-    <div class="box-no-script">         
+    <div class="box-no-script">
       <div class="texto-pagina-centralizado-alt">
         <h2 class="titulo-texto-pagina-centralizado">
-          Este site não funciona com o 
+          Este site não funciona com o
           <span class="destaque-pagina-centralizado">Javascript desabilitado</span>
         </h2>
         <br>
@@ -70,7 +70,7 @@
       </div>
     </div>
   </noscript>
-  
+
   <div id="modais">
     <div class="modal fade" id="modal-1" aria-hidden="true" aria-labelledby="modal-1-label" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
@@ -88,7 +88,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Modal -->
     <!-- TODO - Desenvolver modal de redirecionamento -->
     <div class="modal fade" id="modal-confirm-redirect">
@@ -124,16 +124,7 @@
                   </li>
                 </ul>
               </div>
-              
-              <style>
-                .actions{
-                  display: flex;
-                  justify-content: space-between;
-                  gap: 0.3rem;
-                  margin-top: 1.25rem;
-                }
-              </style>
-              
+
               <div class="actions">
                 <div>
                   <button class="btn btn-primary">Seguir para o site</button>
@@ -155,7 +146,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="modal fade" id="modal-search" aria-hidden="true" aria-labelledby="modal-search-label" tabindex="-1">
       <div class="modal-dialog modal-xl">
         <div class="modal-content">
@@ -191,7 +182,7 @@
       </div>
     </div>
   </div>
-  
+
   <div id="root">
     <nav class="navbar left">
       <div class="navbar-main">
@@ -200,26 +191,28 @@
         </div>
       </div>
     </nav>
-    
+
     <nav class="navbar right">
       <form action="#" method="POST">
         <button class="btn" data-action="contribute">Contribua</button>
         <button type="button" data-action="active-search-vestibulares"><i class="bi bi-search"></i></button>
       </form>
     </nav>
-    
+
     <header class="header container" style="position: relative;">
       <div class="banner">
-        <hgroup class="banner-titles">
-          <h1 class="title-h1">
-            Seu <b class="bold">futuro aqui</b> <br> <b class="bold">Encontre vestibulares</b> de todo o <b class="bold">Brasil</b>
-          </h1>
-        </hgroup>
-        <div class="form-group">
-          <button class="btn" data-action="active-search-vestibulares"></button>
+        <div class="d-flex justify-content-center flex-column" style="flex-grow: 2;">
+          <hgroup class="banner-titles">
+            <h1 class="title-h1">
+              Seu <b class="bold">futuro aqui</b> <br> <b class="bold">Encontre vestibulares</b> de todo o <b class="bold">Brasil</b>
+            </h1>
+          </hgroup>
+          <div class="form-group">
+            <button class="btn" data-action="active-search-vestibulares"></button>
+          </div>
         </div>
-        
-        <div class="actions" style="position: absolute; bottom: 3rem; display: flex; gap: 0.35rem;">
+
+        <div class="actions">
           <button class="btn">Faculdades Públicas</button>
           <button class="btn">Federal</button>
           <button class="btn">Em destaque</button>
@@ -227,7 +220,7 @@
         </div>
       </div>
     </header>
-    
+
     <main class="main container">
       <div class="form-group select-exibition">
         <div>
@@ -239,7 +232,7 @@
           <label class="btn btn-dark" for="btn-check-novos">Novos</label>
         </div>
       </div>
-      
+
       <div class="search-elements-exibition mb-4">
         <form action="#" method="POST">
           <label for="search-element-exibition" class="label mb-1">Procure por um vestibular</label>
@@ -257,78 +250,26 @@
       </div>
     </main>
   </div>
-  
+
   <br>
-  
+
   <div id="load">
     <div class="overlay">
       <div class="spinner-first-load"></div>
     </div>
   </div>
-  
+
   <!-- Footer -->
   <!-- Estilizar -->
   <div class="container">
-    <footer class="py-5">
-      <div class="row">
-        <div class="col-6 col-md-2 mb-3">
-          <h5>Section</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-6 col-md-2 mb-3">
-          <h5>Section</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-6 col-md-2 mb-3">
-          <h5>Section</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-md-5 offset-md-1 mb-3">
-          <form>
-            <h5>Subscribe to our newsletter</h5>
-            <p>Monthly digest of what's new and exciting from us.</p>
-            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-              <label for="newsletter1" class="visually-hidden">Email address</label>
-              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-              <button class="btn btn-primary" type="button">Subscribe</button>
-            </div>
-          </form>
-        </div>
-      </div>
-      
-      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-        <p>© 2023 Company, Inc. All rights reserved.</p>
-        <ul class="list-unstyled d-flex">
-          <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-          <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-          <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-        </ul>
+    <footer class="footer">
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 border-top">
+        <p><i class="bi bi-c-circle"></i>&nbsp;<span data-ano-atual>2023</span> Vestibulares. All rights reserved.</p>
       </div>
     </footer>
   </div>
-  
+
   <script src="./assets/js/frameworks/highlights.js" crossorigin="anonymous"></script>
-  <script src="./assets/js/frameworks/moment.js" async="true" crossorigin="anonymous"></script>
+  <script src="./assets/js/frameworks/moment.js"  crossorigin="anonymous"></script>
 </body>
 </html>

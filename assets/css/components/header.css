@@ -1,0 +1,77 @@
+/* Header */
+.header{
+  padding-block-start: 6rem;
+  padding-block-end: 2rem;
+
+  .banner{
+    background: url(../../img/banner-gradient.png) center / cover no-repeat;
+    min-height: 500px;
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    /* justify-content: space-between; */
+    place-items: flex-start;
+
+    .banner-titles{
+      .title-h1{
+        font-family: 'Inter Tight', 'Inter', sans-serif;
+        font-size: 3rem;
+        text-wrap: balance;
+
+        *{
+          font-family: 'Inter Tight', 'Inter', sans-serif;
+        }
+      }
+    }
+
+    [data-action="active-search-vestibulares"]{
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50px;
+      margin-top: 0.5rem;
+      display: flex;
+      place-content: center;
+
+      &::before{
+        content: "Pesquisar";
+      }
+
+      &::after{
+        margin-left: 0.5rem;
+        font-family: "bootstrap-icons";
+        content: "\F52A";
+      }
+
+      &:hover{
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    .actions{
+      flex-wrap: wrap;
+      display: flex;
+      align-content: flex-end;
+      gap: 0.35rem;
+
+      .btn{
+        display: flex;
+        place-content: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.1);
+        color: #F6F6F6;
+
+        &:hover{
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      .btn::after{
+        font-family: "bootstrap-icons";
+        content: "\F143";
+        margin-left: 0.45rem;
+      }
+    }
+  }
+}

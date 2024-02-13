@@ -1,0 +1,65 @@
+#modal-search{
+  &.show{
+    backdrop-filter: blur(25px);
+  }
+
+  .modal-content{
+    padding: 0.25rem;
+    background: unset;
+    border: none;
+  }
+
+  .modal-header{
+    padding: 1rem 0;
+    border: unset;
+  }
+
+  .search-vestibulares{
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    font-size: 1.35rem;
+    color: #FFF;
+  }
+
+  .search-elements-exibition{
+    .card{
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(25px);
+
+      &.card-info{
+        display: flex;
+
+        .card-body{
+          display: flex;
+          flex-direction: column;
+          place-content: center;
+          place-items: center;
+          max-width: 400px;
+        }
+
+        .info{
+          margin-top: 0.25rem;
+          text-wrap: balance;
+        }
+
+        .title{
+          font-weight: 500;
+          font-size: 1.35rem;
+          padding-bottom: 0;
+
+        }
+
+        .description{
+          margin-top: 0.5rem;
+        }
+
+        .img{
+          width: 150px;
+          height: 150px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}

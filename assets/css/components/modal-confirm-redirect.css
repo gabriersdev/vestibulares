@@ -1,0 +1,54 @@
+#modal-confirm-redirect{
+  .modal-content .card > .card-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+  }
+
+  .title{
+    text-wrap: balance;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 1.75rem;
+  }
+
+  .info-alert{
+    .info-alert-sub{
+      margin-bottom: 0.5rem;
+    }
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .list{
+    cursor: default;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+    
+    .list-item{
+      text-wrap: balance;
+      opacity: 0.8;
+      transition: opacity 0.2s ease-in-out;
+
+      padding: 0.5rem 0.65rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      background: linear-gradient(30deg, #FFFFFF05 0%, #FFFFFF05 100%);
+
+      border-radius: 5px;
+
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+
+  .actions{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.3rem;
+    margin-top: 1.25rem;
+  }
+}
