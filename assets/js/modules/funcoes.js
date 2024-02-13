@@ -4,8 +4,9 @@ const action = () => {
 
 const createLinkGoogleCalendar = (data) => {
   const calendarProps = {
-    initDate: data['subscription-start'] || moment().format('YYYYMMDD'),
-    finishDate: data['subscription-end'] || moment().format('YYYYMMDD'),
+    initDate: moment(data['subscription-start']).format('YYYYMMDD') || moment().format('YYYYMMDD'),
+    // Adição de 1 dia necessária para o Google Calendar interpretar a data corretamente
+    finishDate: moment(data['subscription-end']).add(1, 'days').format('YYYYMMDD') || moment().format('YYYYMMDD'),
     text: `Inscrição para Vestibular da ${data.name} - ${data['short-name']}`,
     details: `Vestibular da ${data.name}`,
     // TODO - Implementar localização da faculdade via CEP (?)
