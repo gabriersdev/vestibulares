@@ -5,7 +5,7 @@ import {
 } from './modules/utilitarios.js';
 import dados from './modules/dados.js';
 import fns from './modules/funcoes.js';
-import { card, card_default } from './modules/content.js';
+import { card, card_default, card_load } from './modules/content.js';
 
 (() => {
   let database;
@@ -127,10 +127,14 @@ import { card, card_default } from './modules/content.js';
       carregarDadosDeTeste();
       loadFuncionsPage();
     } else {
+      // Add. card de carregamento
+      $('.cards').append(card_load.trim());
+
       fetch('/assets/js/modules/database.json')
       .then((response) => response.json())
       .then(({ vestibules }) => {
         database = vestibules;
+        $('.cards .card[aria-hidden="true"]').remove();
         vestibules.toSorted((a, b) => a.name.localeCompare(b.name)).forEach((exam) => {
           $('.cards').append(card(exam));
         });
