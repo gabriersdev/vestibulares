@@ -3,48 +3,82 @@
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
-  
+
   .card{
     .card-header{
       display: flex;
       place-content: space-between;
     }
-    
+
     .card-body{
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    
+
     /* Characteristics */
     .characteristics-list{
       margin: 1rem 0;
-      
+
       display: flex;
       gap: 0.1em;
       flex-direction: column;
-      
+
       .item{
         &::before{
           font-family: "bootstrap-icons";
           margin-right: 0.25rem;
         }
-        
+
         &.type-school::before{
           content: "\F6FD";
         }
-        
+
         &.location::before{
           content: "\F3E7";
         }
       }
     }
-    
+
+    &.card-info{
+      display: flex;
+
+      .card-body{
+        display: flex;
+        flex-direction: column;
+        place-content: center;
+        place-items: flex-start;
+        max-width: 400px;
+      }
+
+      .info{
+        margin-top: 0.25rem;
+        text-wrap: balance;
+      }
+
+      .title{
+        font-weight: 500;
+        font-size: 1.35rem;
+        padding-bottom: 0;
+
+      }
+
+      .description{
+        margin-top: 0.5rem;
+      }
+
+      .img{
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+      }
+    }
+
     .card-title{
       font-family: 'Inter Tight', sans-serif;
       font-size: 1.75rem;
       display: -webkit-box;
-      -webkit-line-clamp: 2; 
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;

@@ -72,28 +72,11 @@
   </noscript>
 
   <div id="modais">
-    <div class="modal fade" id="modal-1" aria-hidden="true" aria-labelledby="modal-1-label" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="modal-1-label">Título</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            [Conteúdo corpo]
-          </div>
-          <div class="modal-footer">
-            [Conteúdo rodapé]
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Modal -->
     <!-- TODO - Desenvolver modal de redirecionamento -->
     <div class="modal fade" id="modal-confirm-redirect">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content" data-id="#">
           <div class="card">
             <div class="card-header">
               <span>Aviso</span>
@@ -127,17 +110,17 @@
 
               <div class="actions">
                 <div>
-                  <button class="btn btn-primary">Seguir para o site</button>
-                  <button class="btn btn-secondary"  data-bs-dismiss="modal">Voltar</button>
+                  <button class="btn btn-primary" data-ref="confirmed" data-id="#">Seguir para o site</button>
+                  <button class="btn btn-secondary" data-bs-dismiss="modal" data-ref="cancel">Voltar</button>
                 </div>
                 <div class="dropdown">
-                  <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Reportar erro</button>
+                  <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-id="#">Reportar erro</button>
                   <ul class="dropdown-menu">
                     <!-- TODO - Implementar ações -->
-                    <li><a class="dropdown-item" data-action="report-error" data-type-error="Informação incorreta" href="#">Informação incorreta</a></li>
-                    <li><a class="dropdown-item" data-action="report-error" data-type-error="Inscrição encerrada" href="#">Inscrição encerrada</a></li>
-                    <li><a class="dropdown-item" data-action="report-error" data-type-error="Link quebrado" href="#">Link quebrado</a></li>
-                    <li><a class="dropdown-item" data-action="report-error" data-type-error="Outro" href="#">Outro tipo de erro</a></li>
+                    <li><a class="dropdown-item" data-action="report-error" data-ref="Informação incorreta" href="#">Informação incorreta</a></li>
+                    <li><a class="dropdown-item" data-action="report-error" data-ref="Inscrição encerrada" href="#">Inscrição encerrada</a></li>
+                    <li><a class="dropdown-item" data-action="report-error" data-ref="Link quebrado" href="#">Link quebrado</a></li>
+                    <li><a class="dropdown-item" data-action="report-error" data-ref="Outro" href="#">Outro tipo de erro</a></li>
                   </ul>
                 </div>
               </div>
@@ -160,7 +143,7 @@
           </div>
 
           <div class="search-elements-exibition">
-            <div class="cards">
+            <div class="cards" data-type-exams="todos">
               <div class="card card-info">
                 <div class="card-body">
                   <div class="info">
@@ -222,32 +205,59 @@
     </header>
 
     <main class="main container">
-      <div class="form-group select-exibition">
-        <div>
-          <input type="radio" name="btn-check-exibition" class="btn-check" id="btn-check-destaque" autocomplete="off" checked>
-          <label class="btn btn-dark" for="btn-check-destaque">Destaque</label>
+      <section id="elements-exibition">
+        <div class="form-group select-exibition">
+          <div>
+            <input type="radio" name="btn-check-exibition" class="btn-check" id="btn-check-destaque" autocomplete="off" checked data-action="select-exibition" data-ref="destaque">
+            <label class="btn btn-dark" for="btn-check-destaque">Destaque</label>
+          </div>
+          <div>
+            <input type="radio" name="btn-check-exibition" class="btn-check" id="btn-check-todos" autocomplete="off" data-action="select-exibition" data-ref="todos">
+            <label class="btn btn-dark" for="btn-check-todos">Todos</label>
+          </div>
         </div>
-        <div>
-          <input type="radio" name="btn-check-exibition" class="btn-check" id="btn-check-novos" autocomplete="off">
-          <label class="btn btn-dark" for="btn-check-novos">Novos</label>
-        </div>
-      </div>
 
-      <div class="search-elements-exibition mb-4">
-        <form action="#" method="POST">
-          <label for="search-element-exibition" class="label mb-1">Procure por um vestibular</label>
-          <div class="input-group">
-            <input type="text" id="search-element-exibition" name="search-element-exibition" placeholder="Vestibular da UFMG" class="form-control" data-action="search-element-exibition" autocomplete="off">
-            <button type="reset" class="btn btn-dark"><i class="bi bi-x-lg"></i></button>
-          </div>
-        </form>
-        <div class="results-search-element-exibition mt-2">
-          <div class="list-group">
+        <div class="search-elements-exibition mb-4">
+          <form action="#" method="POST">
+            <label for="search-element-exibition" class="label mb-1">Procure por um vestibular</label>
+            <div class="input-group">
+              <input type="text" id="search-element-exibition" name="search-element-exibition" placeholder="Vestibular da UFMG" class="form-control" data-action="search-element-exibition" autocomplete="off">
+              <button type="reset" class="btn btn-dark"><i class="bi bi-x-lg"></i></button>
+            </div>
+          </form>
+        </div>
+        <div class="cards" data-type-exams="destaque">
+        </div>
+
+        <div class="cards none" data-type-exams="todos">
+          <div class="card" aria-hidden="true">
+            <div class="card-header placeholder-glow">
+              <span class="placeholder col-6 mt-1 mb-1"></span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title placeholder-glow">
+                <span class="placeholder col-10"></span>
+              </h3>
+              <p class="card-text placeholder-glow">
+                <span class="placeholder col-3"></span>
+                <span class="placeholder col-5"></span><br>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-3"></span><br>
+              </p>
+              <p class="card-text placeholder-glow">
+                <span class="placeholder col-1"></span>
+                <span class="placeholder col-4"></span><br>
+                <span class="placeholder col-1"></span>
+                <span class="placeholder col-8"></span>
+              </p>
+              <div class="d-flex" style="gap: 0.4rem">
+                <a class="btn btn-success disabled placeholder col-5" aria-disabled="true"></a>
+                <a class="btn btn-secondary disabled placeholder col-5" aria-disabled="true"></a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="cards">
-      </div>
+      </section>
     </main>
   </div>
 
