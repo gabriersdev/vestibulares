@@ -69,8 +69,6 @@ import {
               const destaqueCards = $('section#elements-exibition .cards[data-type-exams="destaque"]');
               const todosCards = $('section#elements-exibition .cards[data-type-exams="todos"]');
 
-              console.log(destaqueCards.length, todosCards.length);
-
               if (destaqueCards.length === 1 && todosCards.length === 1) {
                 $(destaqueCards).toggleClass('none');
                 $(todosCards).toggleClass('none');
@@ -110,6 +108,7 @@ import {
                 const vestibulares = fns.searchVestibulares(value, database);
                 const area = $('#modal-search .search-elements-exibition .cards');
                 $(area).find('.card:not(.card-info)').remove();
+                $(area).find('.card.zero-results').remove();
 
                 if (vestibulares.length > 0) {
                   vestibulares.forEach((exam) => {
@@ -117,11 +116,40 @@ import {
                     // Carregar tooltips
                   });
                 } else {
-                  // Limpar caso não tenha resultados
+                  // if ($(area).find(''))
                   $(area).append(card_no_results);
                 }
               } else {
                 // Carregar novamente os conteúdos iniciais
+              }
+            });
+          break;
+
+          case 'search-ref':
+            $(elemento).on('click', (event) => {
+              event.preventDefault();
+              const inputSearch = $('#modal-search input[type=search]');
+
+              if (event.target.dataset.ref.match(/(Faculdades Públicas|Federal|Em destaque)/)) {
+                switch (event.target.dataset.ref) {
+                  case 'Faculdades Públicas':
+                  $(inputSearch).val('tipo:publica');
+                  inputSearch.closest('form').submit();
+                  break;
+                  case 'Federal':
+                  // TODO - Implementar
+                  $(inputSearch).val('tipo:federal');
+                  inputSearch.closest('form').submit();
+                  break;
+                  case 'Em destaque':
+                    // 
+                  break;
+                  default:
+                    //
+                  break;
+                }
+              } else {
+                //
               }
             });
           break;

@@ -196,10 +196,9 @@
         </div>
 
         <div class="actions">
-          <button class="btn">Faculdades Públicas</button>
-          <button class="btn">Federal</button>
-          <button class="btn">Em destaque</button>
-          <button class="btn">Novos</button>
+          <button class="btn" data-action="search-ref" data-ref="Faculdades Públicas">Faculdades Públicas</button>
+          <button class="btn" data-action="search-ref" data-ref="Federal">Federal</button>
+          <button class="btn" data-action="search-ref" data-ref="Em destaque">Em destaque</button>
         </div>
       </div>
     </header>
@@ -218,7 +217,7 @@
         </div>
 
         <div class="search-elements-exibition mb-4">
-          <form action="#" method="POST">
+          <form action="#" method="POST" hidden>
             <label for="search-element-exibition" class="label mb-1">Procure por um vestibular</label>
             <div class="input-group">
               <input type="text" id="search-element-exibition" name="search-element-exibition" placeholder="Vestibular da UFMG" class="form-control" data-action="search-element-exibition" autocomplete="off">
