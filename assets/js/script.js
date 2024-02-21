@@ -100,58 +100,68 @@ import {
           break;
 
           case 'search-vestibulares':
-            $(elemento).on('submit', (event) => {
-              event.preventDefault();
-              const value = event.target.querySelector('input[type=search]').value.trim();
+          $(elemento).on('submit', (event) => {
+            event.preventDefault();
+            const value = event.target.querySelector('input[type=search]').value.trim();
 
-              if (value) {
-                const vestibulares = fns.searchVestibulares(value, database);
-                const area = $('#modal-search .search-elements-exibition .cards');
-                $(area).find('.card:not(.card-info)').remove();
-                $(area).find('.card.zero-results').remove();
+            if (value) {
+              const vestibulares = fns.searchVestibulares(value, database);
+              const area = $('#modal-search .search-elements-exibition .cards');
+              $(area).find('.card:not(.card-info)').remove();
+              $(area).find('.card.zero-results').remove();
 
-                if (vestibulares.length > 0) {
-                  vestibulares.forEach((exam) => {
-                    $(area).append(card(exam));
-                    // Carregar tooltips
-                  });
-                } else {
-                  // if ($(area).find(''))
-                  $(area).append(card_no_results);
-                }
+              if (vestibulares.length > 0) {
+                vestibulares.forEach((exam) => {
+                  $(area).append(card(exam));
+                  // Carregar tooltips
+                });
               } else {
-                // Carregar novamente os conteúdos iniciais
+                // if ($(area).find(''))
+                $(area).append(card_no_results);
               }
-            });
+            } else {
+              // Carregar novamente os conteúdos iniciais
+            }
+          });
           break;
 
           case 'search-ref':
-            $(elemento).on('click', (event) => {
-              event.preventDefault();
-              const inputSearch = $('#modal-search input[type=search]');
+          $(elemento).on('click', (event) => {
+            event.preventDefault();
+            const modal = $('#modal-search');
+            const inputSearch = $('#modal-search input[type=search]');
 
-              if (event.target.dataset.ref.match(/(Faculdades Públicas|Federal|Em destaque)/)) {
-                switch (event.target.dataset.ref) {
-                  case 'Faculdades Públicas':
-                  $(inputSearch).val('tipo:publica');
-                  inputSearch.closest('form').submit();
-                  break;
-                  case 'Federal':
-                  // TODO - Implementar
-                  $(inputSearch).val('tipo:federal');
-                  inputSearch.closest('form').submit();
-                  break;
-                  case 'Em destaque':
-                    // 
-                  break;
-                  default:
-                    //
-                  break;
-                }
-              } else {
+            if (event.target.dataset.ref.match(/(Faculdades Públicas|Federal|Em destaque)/)) {
+              switch (event.target.dataset.ref) {
+                case 'Faculdades Públicas':
+                $(inputSearch).val('tipo:publica');
+                inputSearch.closest('form').submit();
+                $(modal).modal('show');
+                break;
+                case 'Federal':
+                // TODO - Implementar
+                $(inputSearch).val('tipo:federal');
+                inputSearch.closest('form').submit();
+                $(modal).modal('show');
+                break;
+                case 'Em destaque':
                 //
+                const btnCheckDestaque = $('#btn-check-destaque')[0];
+
+                if (btnCheckDestaque.checked) {
+                  btnCheckDestaque.click();
+                }
+
+                window.scrollTo({ top: btnCheckDestaque.offsetTop - $('.navbar.left')[0].offsetHeight, behavior: 'smooth' });
+                break;
+                default:
+                //
+                break;
               }
-            });
+            } else {
+              //
+            }
+          });
           break;
 
           default:
