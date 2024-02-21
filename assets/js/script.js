@@ -6,7 +6,7 @@ import {
 import dados from './modules/dados.js';
 import fns from './modules/funcoes.js';
 import {
-  card, card_default, card_load, card_no_exams,
+  card, card_default, card_load, card_no_exams, card_no_results,
 } from './modules/content.js';
 
 (() => {
@@ -101,6 +101,31 @@ import {
           });
           break;
 
+          case 'search-vestibulares':
+            $(elemento).on('submit', (event) => {
+              event.preventDefault();
+              const value = event.target.querySelector('input[type=search]').value.trim();
+
+              if (value) {
+                const vestibulares = fns.searchVestibulares(value, database);
+                const area = $('#modal-search .search-elements-exibition .cards');
+                $(area).find('.card:not(.card-info)').remove();
+
+                if (vestibulares.length > 0) {
+                  vestibulares.forEach((exam) => {
+                    $(area).append(card(exam));
+                    // Carregar tooltips
+                  });
+                } else {
+                  // Limpar caso não tenha resultados
+                  $(area).append(card_no_results);
+                }
+              } else {
+                // Carregar novamente os conteúdos iniciais
+              }
+            });
+          break;
+
           default:
           console.warn('A ação %s não foi implementada.', elemento.dataset.action);
           break;
@@ -165,9 +190,6 @@ import {
       .then((response) => response.json())
       .then(({ vestibules }) => {
         database = vestibules;
-
-        // fns.searchVestibulares('tipo:publica local: Belo Horizonte - mg', database);
-
         $('.card[aria-hidden="true"]').remove();
 
         const destaqueCards = $('.cards[data-type-exams="destaque"]');

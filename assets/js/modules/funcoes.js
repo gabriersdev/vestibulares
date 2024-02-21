@@ -29,15 +29,22 @@ const searchElementExibition = (event, database) => {
 const searchVestibulares = (value, database) => {
   // Para pesquisar por tipo e local
   const valueHasLocal = value.toLowerCase().match(/local:\s*[\wÀ-ú\s]+/gi);
+  let valueLocalSanitized;
+
   const valueHasTipo = value.toLowerCase().match(/tipo:\s*(p(u|ú)blica|particular)+/gi);
+  let valueTipoSanitized;
+
+  let results = [];
 
   if (valueHasLocal) {
     let sanitized = valueHasLocal[0];
     if (sanitized.match(/local/gi)) sanitized = sanitized.replace(/local:\s*/gi, '').trim();
+    valueLocalSanitized = sanitized;
+
     try {
-      console.log(database.filter((item) => item.local.toLowerCase().match(/\b[\wÀ-ú\s]*\b/gi).filter((m) => m.length > 0).includes(sanitized)));
+      // database.filter((item) => item.local.toLowerCase().match(/\b[\wÀ-ú\s]*\b/gi).filter((m) => m.length > 0).includes(valueLocalSanitized));
     } catch (error) {
-      console.info('Um erro ocorreu ao tentar filtrar por localidade', error);
+      console.info('Um erro ocorreu ao tentar filtrar por localidade. Erro: %s', error);
     }
   }
 
@@ -45,17 +52,33 @@ const searchVestibulares = (value, database) => {
     let sanitized = valueHasTipo[0];
     if (sanitized.match(/tipo/gi)) sanitized = sanitized.replace(/tipo:\s*|/gi, '').trim();
     sanitized = sanitized.replace(/tipo/gi, '').trim();
-
+    valueTipoSanitized = sanitized === 'publica' ? 'pública' : 'particular';
     try {
-      database.filter((item) => item.type.toLowerCase().includes(sanitized === 'publica' ? 'pública' : 'particular'));
+      // database.filter((item) => item.type.toLowerCase().includes(sanitized === 'publica' ? 'pública' : 'particular'));
     } catch (error) {
-      console.info('Um erro ocorreu ao tentar filtrar por tipo', error);
+      console.info('Um erro ocorreu ao tentar filtrar por tipo. Erro: %s', error);
     }
   }
+
+  try {
+    if (valueLocalSanitized && valueTipoSanitized) {
+      results = results.concat(database.filter((item) => item.local.toLowerCase().match(/\b[\wÀ-ú\s]*\b/gi).filter((m) => m.length > 0).includes(valueLocalSanitized) && item.type.toLowerCase().includes(valueTipoSanitized)));
+    } else if (valueLocalSanitized) {
+      results = results.concat(database.filter((item) => item.local.toLowerCase().match(/\b[\wÀ-ú\s]*\b/gi).filter((m) => m.length > 0).includes(valueLocalSanitized)));
+    } else if (valueTipoSanitized) {
+      results = results.concat(database.filter((item) => item.type.toLowerCase().includes(valueTipoSanitized)));
+    }
+  } catch (error) {
+    console.info('Um erro ocorreu ao tentar filtrar. Erro: %s', error);
+  }
+
+  return results;
 };
 
 const setInfoModalConfirm = (data) => {
   const modal = $('#modal-confirm-redirect');
+  $('#modal-search').modal('hide');
+
   if (modal.length === 1) {
     $(modal).find('.card-body h4.title').text(`Você será direcionado para o site da ${data['short-name'] || 'Faculdade'}`);
     $('#modal-confirm-redirect [data-id]').attr('data-id', data.id);
@@ -75,5 +98,5 @@ export default {
   createLinkGoogleCalendar,
   searchElementExibition,
   searchVestibulares,
-  setInfoModalConfirm
+  setInfoModalConfirm,
 };
