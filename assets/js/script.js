@@ -224,7 +224,7 @@ import {
       // Add. card de carregamento
       $('.cards').append(card_load.trim());
 
-      fetch('/assets/js/modules/database.json')
+      fetch('./assets/js/modules/database.json')
       .then((response) => response.json())
       .then(({ vestibules }) => {
         database = vestibules;
