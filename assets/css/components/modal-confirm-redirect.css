@@ -26,7 +26,7 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 0.35rem;
-    
+
     .list-item{
       text-wrap: balance;
       opacity: 0.8;
@@ -47,8 +47,14 @@
 
   .actions{
     display: flex;
-    justify-content: space-between;
     gap: 0.3rem;
     margin-top: 1.25rem;
+    flex-wrap: wrap;
+
+    .dropdown{
+      [type="button"][data-bs-toggle="dropdown"]{
+        float: left;
+      }
+    }
   }
 }

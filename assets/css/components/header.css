@@ -20,6 +20,10 @@
         font-size: 3rem;
         text-wrap: balance;
 
+        @media screen and (width <= 390px) {
+          font-size: 2.5rem;
+        }
+
         *{
           font-family: 'Inter Tight', 'Inter', sans-serif;
         }
@@ -54,6 +58,10 @@
       display: flex;
       align-content: flex-end;
       gap: 0.35rem;
+
+      @media screen and (width <= 390px) {
+        margin-top: 1rem;
+      }
 
       .btn{
         display: flex;
