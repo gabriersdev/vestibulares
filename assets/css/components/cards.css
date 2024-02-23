@@ -2,11 +2,11 @@
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+  /* grid-template-rows: repeat(auto-fill, minmax(300px, 1fr)); */
+  grid-template-rows: auto;
 
   @media screen and (width <= 500px) {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
   }
 
   .card{

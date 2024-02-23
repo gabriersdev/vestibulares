@@ -114,6 +114,8 @@ import {
                 vestibulares.forEach((exam) => {
                   $(area).append(card(exam));
                   // Carregar tooltips
+                  criarTooltips();
+                  tooltips();
                 });
               } else {
                 // if ($(area).find(''))

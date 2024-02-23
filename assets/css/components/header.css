@@ -4,8 +4,9 @@
   padding-block-end: 2rem;
 
   .banner{
-    background: url(../../img/banner-gradient.png) center / cover no-repeat;
-    min-height: 500px;
+    /* background: url(../../img/banner-gradient.png) center / cover no-repeat; */
+    background-color: var(--bs-secondary-bg);
+    min-height: 60vh;
     border-radius: 15px;
     padding: 1rem;
     display: flex;
