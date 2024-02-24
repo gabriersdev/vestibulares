@@ -67,6 +67,8 @@ const searchVestibulares = (value, database) => {
       results = results.concat(database.filter((item) => item.local.toLowerCase().match(/\b[\wÀ-ú\s]*\b/gi).filter((m) => m.length > 0).includes(valueLocalSanitized)));
     } else if (valueTipoSanitized) {
       results = results.concat(database.filter((item) => item.type.toLowerCase().includes(valueTipoSanitized)));
+    } else {
+      results = database.filter((item) => item.name.toLowerCase().trim().substring(0, value.trim().length) === value.toLowerCase().trim() || item.name.toLowerCase().trim().includes(value.toLowerCase().trim()));
     }
   } catch (error) {
     console.info('Um erro ocorreu ao tentar filtrar. Erro: %s', error);
@@ -75,7 +77,7 @@ const searchVestibulares = (value, database) => {
   return results;
 };
 
-const setInfoModalConfirm = (data) => {
+const setInfoModalConfirm = (data, actionReturn) => {
   const modal = $('#modal-confirm-redirect');
   $('#modal-search').modal('hide');
 
@@ -87,9 +89,49 @@ const setInfoModalConfirm = (data) => {
       $(modal).find('.actions [data-ref="confirmed"]').attr('disabled', true);
     }
 
+    if (actionReturn) {
+      $(modal).find('.actions [data-bs-dismiss="modal"]').attr('onclick', actionReturn);
+    } else {
+      $(modal).find('.actions [data-bs-dismiss="modal"]').removeAttr('onclick');
+    }
+
     $(modal).modal('show');
   } else {
     Swal.alert({ title: 'Modal não encontrado', icon: 'error' });
+  }
+};
+
+const loadAllExams = ({ card_no_exams, card }, vestibules) => {
+  $('.card[aria-hidden="true"]').remove();
+
+  const destaqueCards = $('.cards[data-type-exams="destaque"]');
+  const examsDestaque = vestibules.filter((exam) => exam.destaque === true).sort((a, b) => new Date(a['subscription-end']).getTime() - new Date(b['subscription-end']).getTime());
+
+  const todosExamsCards = $('.cards[data-type-exams="todos"]');
+  const todosExams = vestibules.sort((examA, examB) => examA.name.localeCompare(examB.name));
+
+  if (destaqueCards.length === 1) {
+    $(destaqueCards).find('.card').remove();
+    // $(destaqueCards).find('.card[aria-hidden="true"]').remove();
+    if (examsDestaque.length > 0) {
+      examsDestaque.forEach((exam) => {
+        destaqueCards.append(card(exam));
+      });
+    } else {
+      destaqueCards.append(card_no_exams.trim());
+    }
+  }
+
+  if (todosExamsCards.length >= 1) {
+    $(todosExamsCards).find('.card').remove();
+    if (examsDestaque.length > 0) {
+      // $(todosExamsCards).find('.card[aria-hidden="true"]').remove();
+      todosExams.forEach((exam) => {
+        todosExamsCards.append(card(exam));
+      });
+    } else {
+      todosExamsCards.append(card_no_exams.trim());
+    }
   }
 };
 
@@ -99,4 +141,5 @@ export default {
   searchElementExibition,
   searchVestibulares,
   setInfoModalConfirm,
+  loadAllExams,
 };

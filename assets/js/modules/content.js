@@ -67,7 +67,7 @@ const card_default = `
 </div>`;
 
 const card_no_exams = `
-<div class="card card-info zero-results">
+<div class="card card-info zero-results" style="height: 300px">
 <div class="card-body">
   <img src="./assets/img/fail.png" class="img" alt="">
 
@@ -79,7 +79,7 @@ const card_no_exams = `
 </div>`;
 
 const card_no_results = `
-<div class="card card-info zero-results">
+<div class="card card-info zero-results" style="height: 300px">
 <div class="card-body">
   <img src="./assets/img/error.png" class="img" alt="">
 
@@ -91,7 +91,7 @@ const card_no_results = `
 </div>`;
 
 const card_load = `
-<div class="card" aria-hidden="true">
+<div class="card" aria-hidden="true" style="height: 300px">
 <div class="card-header placeholder-glow">
   <span class="placeholder col-6 mt-1 mb-1"></span>
 </div>

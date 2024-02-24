@@ -103,10 +103,10 @@ import {
           $(elemento).on('submit', (event) => {
             event.preventDefault();
             const value = event.target.querySelector('input[type=search]').value.trim();
+            const area = $('#modal-search .search-elements-exibition .cards');
 
             if (value) {
               const vestibulares = fns.searchVestibulares(value, database);
-              const area = $('#modal-search .search-elements-exibition .cards');
               $(area).find('.card:not(.card-info)').remove();
               $(area).find('.card.zero-results').remove();
 
@@ -123,6 +123,7 @@ import {
               }
             } else {
               // Carregar novamente os conteúdos iniciais
+              fns.loadAllExams({ card_no_exams, card }, database);
             }
           });
           break;
@@ -230,35 +231,7 @@ import {
       .then((response) => response.json())
       .then(({ vestibules }) => {
         database = vestibules;
-        $('.card[aria-hidden="true"]').remove();
-
-        const destaqueCards = $('.cards[data-type-exams="destaque"]');
-        const examsDestaque = vestibules.filter((exam) => exam.destaque === true).sort((a, b) => new Date(a['subscription-end']).getTime() - new Date(b['subscription-end']).getTime());
-
-        const todosExamsCards = $('.cards[data-type-exams="todos"]');
-        const todosExams = vestibules.sort((examA, examB) => examA.name.localeCompare(examB.name));
-
-        if (destaqueCards.length === 1) {
-          $(destaqueCards).find('.card[aria-hidden="true"]').remove();
-          if (examsDestaque.length > 0) {
-            examsDestaque.forEach((exam) => {
-              destaqueCards.append(card(exam));
-            });
-          } else {
-            destaqueCards.append(card_no_exams.trim());
-          }
-        }
-
-        if (todosExamsCards.length >= 1) {
-          if (examsDestaque.length > 0) {
-            $(todosExamsCards).find('.card[aria-hidden="true"]').remove();
-            todosExams.forEach((exam) => {
-              todosExamsCards.append(card(exam));
-            });
-          } else {
-            todosExamsCards.append(card_no_exams.trim());
-          }
-        }
+        fns.loadAllExams({ card_no_exams, card }, vestibules);
       })
       .catch((error) => console.error(error))
       .finally(() => {
@@ -270,12 +243,18 @@ import {
   window.subscribeInVestibular = (btn) => {
     const btnId = btn.dataset.id;
     const cardId = btn.closest('.card').dataset.id;
+    let actionReturn;
+
+    // Verifica se o botão de inscrição é de um card do modal
+    if (btn.closest('.modal')) {
+      actionReturn = `$('#modal-search').modal('show'); setTimeout(window.scrollTo({ top: ${btn.closest('.card').offsetTop}, behavior: 'smooth' }), 1000);`;
+    }
 
     if (btn && (btnId === cardId) && ![btnId, cardId].includes(undefined)) {
       const itemDatabase = database.find((item) => parseInt(item.id, 10) === parseInt(btnId, 10));
       if (itemDatabase) {
         // TODO - Implementar orientação para click nos botões do modal
-        fns.setInfoModalConfirm(itemDatabase);
+        fns.setInfoModalConfirm(itemDatabase, actionReturn);
       } else {
         //
       }
