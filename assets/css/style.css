@@ -62,7 +62,7 @@ body{
   --bs-tooltip-margin: 1rem;
 }
 
-[data-action="contribute"]{
+[data-action="contribute"], .btn-transparent{
   border: 1px solid rgba(255, 255, 255, 0.1);
   /* color: #FFF; */
   /* border-radius: 5px; */
@@ -108,4 +108,12 @@ input:checked ~ .btn-dark{
 
 .modal-backdrop{
   opacity: 0.75 !important;
+}
+
+[data-action="ir-para-o-topo"]{
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 2;
+  /* float: inline-end; */
 }

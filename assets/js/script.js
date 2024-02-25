@@ -72,6 +72,7 @@ import {
               if (destaqueCards.length === 1 && todosCards.length === 1) {
                 $(destaqueCards).toggleClass('none');
                 $(todosCards).toggleClass('none');
+                console.log(event.target.parentElement.querySelector('label'));
               }
             }
           });
@@ -143,7 +144,7 @@ import {
                 break;
                 case 'Federal':
                 // TODO - Implementar
-                $(inputSearch).val('tipo:federal');
+                $(inputSearch).val('Federal');
                 inputSearch.closest('form').submit();
                 $(modal).modal('show');
                 break;

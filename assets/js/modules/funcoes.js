@@ -68,7 +68,9 @@ const searchVestibulares = (value, database) => {
     } else if (valueTipoSanitized) {
       results = results.concat(database.filter((item) => item.type.toLowerCase().includes(valueTipoSanitized)));
     } else {
-      results = database.filter((item) => item.name.toLowerCase().trim().substring(0, value.trim().length) === value.toLowerCase().trim() || item.name.toLowerCase().trim().includes(value.toLowerCase().trim()));
+      const removeAccents = (str) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+
+      results = results.concat(database.filter((item) => item.name.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, "").substring(0, value.trim().length) === value.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, "") || item.name.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, "").includes(value.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, ""))));
     }
   } catch (error) {
     console.info('Um erro ocorreu ao tentar filtrar. Erro: %s', error);
