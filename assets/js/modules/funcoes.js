@@ -21,8 +21,7 @@ const searchElementExibition = (event, database) => {
   const area = document.querySelector('.results-search-element-exibition');
 
   if (searched.length > 0 && database.length > 0) {
-    // const results = database.filter((item) => item.name.toLowerCase().includes(searched));
-    // area.innerHTML = '';
+    area.innerHTML = '';
   }
 };
 
@@ -68,9 +67,9 @@ const searchVestibulares = (value, database) => {
     } else if (valueTipoSanitized) {
       results = results.concat(database.filter((item) => item.type.toLowerCase().includes(valueTipoSanitized)));
     } else {
-      const removeAccents = (str) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+      const removeAccents = (str) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-      results = results.concat(database.filter((item) => item.name.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, "").substring(0, value.trim().length) === value.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, "") || item.name.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, "").includes(value.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, ""))));
+      results = results.concat(database.filter((item) => removeAccents(item.name.toLowerCase().trim().normalize('NFD')).substring(0, value.trim().length) === removeAccents(value.toLowerCase().trim()) || removeAccents(item.name.toLowerCase().trim()).includes(removeAccents(value.toLowerCase().trim()))));
     }
   } catch (error) {
     console.info('Um erro ocorreu ao tentar filtrar. Erro: %s', error);

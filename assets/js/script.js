@@ -168,6 +168,13 @@ import {
           });
           break;
 
+          case 'ir-para-o-topo':
+          $(elemento).on('click', (event) => {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+          break;
+
           default:
           console.warn('A ação %s não foi implementada.', elemento.dataset.action);
           break;
@@ -239,6 +246,13 @@ import {
         loadFuncionsPage();
       });
     }
+
+    // Scroll
+    $(window).on('scroll', (event) => {
+      // Verificar altura da página que está com o tamanho da tela. Se a altura da página for menor ou igual ao tamanho da tela, o botão de "Topo" não deve aparecer. Se não for o caso, o botão deve aparecer
+      // console.log(document.querySelector('body').scrollTop);
+      console.log(window.innerHeight, document.querySelector('footer').getBoundingClientRect().top - window.innerHeight, document.body.offsetHeight);
+    });
   });
 
   window.subscribeInVestibular = (btn) => {
