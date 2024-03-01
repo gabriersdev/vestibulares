@@ -248,10 +248,12 @@ import {
     }
 
     // Scroll
-    $(window).on('scroll', (event) => {
+    $(window).on('scroll', () => {
       // Verificar altura da página que está com o tamanho da tela. Se a altura da página for menor ou igual ao tamanho da tela, o botão de "Topo" não deve aparecer. Se não for o caso, o botão deve aparecer
       // console.log(document.querySelector('body').scrollTop);
-      console.log(window.innerHeight, document.querySelector('footer').getBoundingClientRect().top - window.innerHeight, document.body.offsetHeight);
+
+      // @media and (?scroll) (height > 100vh) { }
+      // console.log(window.innerHeight, document.querySelector('footer').getBoundingClientRect().top - window.innerHeight, document.body.offsetHeight);
     });
   });
 
