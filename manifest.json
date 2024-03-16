@@ -1,6 +1,7 @@
 {
   "name": "Vestibulares",
   "description": "Projeto para acessar os vestibulares no Brasil.",
+  "version": "1.0.0",
   "short_name": "vestibulares",
   "background": "#F6F6F6",
   "icons": [
