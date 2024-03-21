@@ -143,7 +143,6 @@ import {
                 $(modal).modal('show');
                 break;
                 case 'Federal':
-                // TODO - Implementar
                 $(inputSearch).val('Federal');
                 inputSearch.closest('form').submit();
                 $(modal).modal('show');
@@ -270,7 +269,6 @@ import {
     if (btn && (btnId === cardId) && ![btnId, cardId].includes(undefined)) {
       const itemDatabase = database.find((item) => parseInt(item.id, 10) === parseInt(btnId, 10));
       if (itemDatabase) {
-        // TODO - Implementar orientação para click nos botões do modal
         fns.setInfoModalConfirm(itemDatabase, actionReturn);
       } else {
         //
