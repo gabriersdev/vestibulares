@@ -23,4 +23,4 @@ Projeto para se inscrever aos vestibulares no Brasil. Também é possível busca
 
 <!-- Variables -->
 [img-exemplo-projeto]: ./assets/img/example.png
-[link-projeto]: https://gabrieszin.github.io/vestibulares
+[link-projeto]: https://gabriersdev.github.io/vestibulares
