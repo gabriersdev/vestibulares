@@ -1,31 +1,33 @@
 <!DOCTYPE html data-action="scroll">
 <html lang="pt-BR" data-bs-theme="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="./manifest.json">
 
-  <!-- TODO - Atualizar meta-props -->
-  <meta name="robots" content="index, nofollow">
-  <meta name="keywords" content="#">
-  <meta name="author" content="Gabriel Ribeiro">
-  <meta name="description" content="#">
-  <meta name="theme-color" content="#">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="./manifest.json">
 
-  <meta property="og:title" content="Trilhe seu próprio futuro - Busque por um vestibular">
-  <meta property="og:description" content="Projeto para se inscrever aos vestibulares no Brasil. Também é possível buscar os vestibulares por região, tipo de faculdade (federal, pública e particular) e criar lembretes.">
-  <meta property="og:url" content="https://gabriersdev.github.io/vestibulares">
-  <meta property="og:image" content="https://gabriersdev.github.io/vestibulares/assets/img/external-banner.png">
-  <meta property="og:image:secure_url" content="https://gabriersdev.github.io/vestibulares/assets/img/external-banner.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1000">
-  <meta property="og:image:height" content="600">
+    <!-- TODO - Atualizar meta-props -->
+    <meta name="robots" content="index, nofollow">
+    <meta name="keywords" content="#">
+    <meta name="author" content="Gabriel Ribeiro">
+    <meta name="description" content="#">
+    <meta name="theme-color" content="#">
 
-  <meta name="twitter:title" content="Trilhe seu próprio Futuro - Procure um vestibular">
+    <meta property="og:title" content="Trilhe seu próprio futuro - Busque por um vestibular">
+    <meta property="og:description"
+      content="Projeto para se inscrever aos vestibulares no Brasil. Também é possível buscar os vestibulares por região, tipo de faculdade (federal, pública e particular) e criar lembretes.">
+    <meta property="og:url" content="https://gabriersdev.github.io/vestibulares">
+    <meta property="og:image" content="https://gabriersdev.github.io/vestibulares/assets/img/external-banner.png">
+    <meta property="og:image:secure_url"
+      content="https://gabriersdev.github.io/vestibulares/assets/img/external-banner.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="600">
 
-  <meta http-equiv="Content-Security-Policy"
-  content="default-src 'self';
+    <meta name="twitter:title" content="Trilhe seu próprio Futuro - Procure um vestibular">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
   style-src 'self' 'unsafe-inline';
   style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com;
   img-src 'self' data:;
@@ -34,124 +36,134 @@
   frame-src 'self';
   connect-src 'self';">
 
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/frameworks/highlights-A11Y-dark.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/frameworks/highlights-A11Y-dark.css">
 
-  <link rel="shortcut icon" href="./assets/img/icons/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/icons/favicon.svg" type="image/x-icon">
 
-  <title>Vestibulares</title>
+    <title>Vestibulares</title>
 
-  <script src="./assets/js/frameworks/jquery.js" defer crossorigin="anonymous"></script>
-  <script src="./assets/js/frameworks/bootstrap.js" defer crossorigin="anonymous"></script>
-  <script src="./assets/js/frameworks/pooper.js" defer crossorigin="anonymous"></script>
-  <script src="./assets/js/frameworks/simple-mask-money.js" defer crossorigin="anonymous"></script>
-  <script src="./assets/js/frameworks/sweet-alert.js" defer crossorigin="anonymous"></script>
-  <script src="./assets/js/frameworks/jquery-mask.js" defer crossorigin="anonymous"></script>
-  <script src="./assets/js/frameworks/fileSaver.js" async="true" crossorigin="anonymous"></script>
-  <script type="module" src="./assets/js/script.js" defer crossorigin="anonymous"></script>
-  <script src="./assets/js/frameworks/print.min.js" defer crossorigin="anonymous"></script>
-</head>
-<body>
+    <script src="./assets/js/frameworks/jquery.js" defer crossorigin="anonymous"></script>
+    <script src="./assets/js/frameworks/bootstrap.js" defer crossorigin="anonymous"></script>
+    <script src="./assets/js/frameworks/pooper.js" defer crossorigin="anonymous"></script>
+    <script src="./assets/js/frameworks/simple-mask-money.js" defer crossorigin="anonymous"></script>
+    <script src="./assets/js/frameworks/sweet-alert.js" defer crossorigin="anonymous"></script>
+    <script src="./assets/js/frameworks/jquery-mask.js" defer crossorigin="anonymous"></script>
+    <script src="./assets/js/frameworks/fileSaver.js" async="true" crossorigin="anonymous"></script>
+    <script type="module" src="./assets/js/script.js" defer crossorigin="anonymous"></script>
+    <script src="./assets/js/frameworks/print.min.js" defer crossorigin="anonymous"></script>
+  </head>
 
-  <noscript>
-    <div class="box-no-script">
-      <div class="texto-pagina-centralizado-alt">
-        <h2 class="titulo-texto-pagina-centralizado">
-          Este site não funciona com o
-          <span class="destaque-pagina-centralizado">Javascript desabilitado</span>
-        </h2>
-        <br>
-        <p class="label-texto-pagina-centralizado">Muitos dos recursos usados funcionam através do Javascript e sem ele a navegabilidade e o próprio funcionamento do site são comprometidos.</p>
-        <p class="label-texto-pagina-centralizado">Portanto, habilite o Javascript e navegue pelo site.</p><br>
-        <button data-recarrega-pagina class="btn-principal-no-script" id="btn-redirecionar-inicio" name="btn-redirecionar-inicio">Recarregar</button>
+  <body>
+
+    <noscript>
+      <div class="box-no-script">
+        <div class="texto-pagina-centralizado-alt">
+          <h2 class="titulo-texto-pagina-centralizado">
+            Este site não funciona com o
+            <span class="destaque-pagina-centralizado">Javascript desabilitado</span>
+          </h2>
+          <br>
+          <p class="label-texto-pagina-centralizado">Muitos dos recursos usados funcionam através do Javascript e sem
+            ele a navegabilidade e o próprio funcionamento do site são comprometidos.</p>
+          <p class="label-texto-pagina-centralizado">Portanto, habilite o Javascript e navegue pelo site.</p><br>
+          <button data-recarrega-pagina class="btn-principal-no-script" id="btn-redirecionar-inicio"
+            name="btn-redirecionar-inicio">Recarregar</button>
+        </div>
       </div>
-    </div>
-  </noscript>
+    </noscript>
 
-  <div id="modais">
-    <!-- Modal -->
-    <div class="modal fade" id="modal-confirm-redirect">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" data-id="#">
-          <div class="card">
-            <div class="card-header">
-              <span>Aviso</span>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="card-body">
-              <h4 class="title">Você será direcionado para o site da UFMG</h4>
-              <div class="info-alert">
-                <p class="info-alert-sub">
-                  Antes de seguir, saiba que:
-                </p>
-                <ul class="list">
-                  <li class="list-item">
-                    <i class="bi bi-shield-check"></i>
-                    <span>
-                      Não garantimos a reserva de vaga ou a aprovação no vestibular.
-                    </span>
-                  </li>
-                  <li class="list-item">
-                    <i class="bi bi-file-earmark-text"></i>
-                    <span>Tenha em mãos seus documentos de identificação e escolaridade.</span>
-                  </li>
-                  <li class="list-item">
-                    <i class="bi bi-shield-exclamation"></i>
-                    <span>
-                      Não nos responsabilizamos pelo tratamento e gestão dos seus dados.
-                    </span>
-                  </li>
-                </ul>
+    <div id="modais">
+      <!-- Modal -->
+      <div class="modal fade" id="modal-confirm-redirect">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content" data-id="#">
+            <div class="card">
+              <div class="card-header">
+                <span>Aviso</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-
-              <div class="actions">
-                <button class="btn btn-primary" data-ref="confirmed" data-id="#">Seguir para o site</button>
-                <button class="btn btn-secondary" data-bs-dismiss="modal" data-ref="cancel">Voltar</button>
-                <div class="dropdown">
-                  <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-id="#">Reportar erro</button>
-                  <ul class="dropdown-menu">
-                    <!-- TODO - Implementar ações -->
-                    <li><a class="dropdown-item" data-action="report-error" data-ref="Informação incorreta" href="#">Informação incorreta</a></li>
-                    <li><a class="dropdown-item" data-action="report-error" data-ref="Inscrição encerrada" href="#">Inscrição encerrada</a></li>
-                    <li><a class="dropdown-item" data-action="report-error" data-ref="Link quebrado" href="#">Link quebrado</a></li>
-                    <li><a class="dropdown-item" data-action="report-error" data-ref="Outro" href="#">Outro tipo de erro</a></li>
+              <div class="card-body">
+                <h4 class="title">Você será direcionado para o site da UFMG</h4>
+                <div class="info-alert">
+                  <p class="info-alert-sub">
+                    Antes de seguir, saiba que:
+                  </p>
+                  <ul class="list">
+                    <li class="list-item">
+                      <i class="bi bi-shield-check"></i>
+                      <span>
+                        Não garantimos a reserva de vaga ou a aprovação no vestibular.
+                      </span>
+                    </li>
+                    <li class="list-item">
+                      <i class="bi bi-file-earmark-text"></i>
+                      <span>Tenha em mãos seus documentos de identificação e escolaridade.</span>
+                    </li>
+                    <li class="list-item">
+                      <i class="bi bi-shield-exclamation"></i>
+                      <span>
+                        Não nos responsabilizamos pelo tratamento e gestão dos seus dados.
+                      </span>
+                    </li>
                   </ul>
+                </div>
+
+                <div class="actions">
+                  <button class="btn btn-primary" data-ref="confirmed" data-id="#">Seguir para o site</button>
+                  <button class="btn btn-secondary" data-bs-dismiss="modal" data-ref="cancel">Voltar</button>
+                  <div class="dropdown">
+                    <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                      aria-expanded="false" data-id="#">Reportar erro</button>
+                    <ul class="dropdown-menu">
+                      <!-- TODO - Implementar ações -->
+                      <li><a class="dropdown-item" data-action="report-error" data-ref="Informação incorreta"
+                          href="#">Informação incorreta</a></li>
+                      <li><a class="dropdown-item" data-action="report-error" data-ref="Inscrição encerrada"
+                          href="#">Inscrição encerrada</a></li>
+                      <li><a class="dropdown-item" data-action="report-error" data-ref="Link quebrado" href="#">Link
+                          quebrado</a></li>
+                      <li><a class="dropdown-item" data-action="report-error" data-ref="Outro" href="#">Outro tipo de
+                          erro</a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="modal fade" id="modal-search" aria-hidden="true" aria-labelledby="modal-search-label" tabindex="-1">
-      <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="title"><label for="search-vestibulares">Procure por um vestibular</label></h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
+      <div class="modal fade" id="modal-search" aria-hidden="true" aria-labelledby="modal-search-label" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="title"><label for="search-vestibulares">Procure por um vestibular</label></h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-          <form class="from-group" data-action="search-vestibulares" autocomplete="off">
-            <input type="search" class="form-control search-vestibulares" id="search-vestibulares" name="search-vestibulares" placeholder="local: ou tipo: ou vestibular">
-            <span class="mt-2 d-block mb-2 alert alert-secondary px-2 py-2">
-              <i class="bi bi-box-arrow-in-left"></i>&nbsp;Pressione <b>ENTER</b> para buscar
-            </span>
-          </form>
+            <form class="from-group" data-action="search-vestibulares" autocomplete="off">
+              <input type="search" class="form-control search-vestibulares" id="search-vestibulares"
+                name="search-vestibulares" placeholder="local: ou tipo: ou vestibular">
+              <span class="mt-2 d-block mb-2 alert alert-secondary px-2 py-2">
+                <i class="bi bi-box-arrow-in-left"></i>&nbsp;Pressione <b>ENTER</b> para buscar
+              </span>
+            </form>
 
-          <div class="search-elements-exibition">
-            <div class="cards" data-type-exams="todos">
-              <div class="card card-info d-none" hidden>
-                <div class="card-body">
-                  <div class="info">
-                    <h3 class="title">Utilize comandos para fazer buscas mais eficientes</h3>
-                    <div class="mt-2 mb-2">
-                      <kbd class="text-dark">local:</kbd>
-                      <span class="text-muted">Ex: Belo Horizonte</span>
-                    </div>
-                    <div class="mt-2 mb-2">
-                      <kbd class="text-dark">tipo:</kbd>
-                      <span class="text-muted">Pública ou Particular</span>
+            <div class="search-elements-exibition">
+              <div class="cards" data-type-exams="todos">
+                <div class="card card-info d-none" hidden>
+                  <div class="card-body">
+                    <div class="info">
+                      <h3 class="title">Utilize comandos para fazer buscas mais eficientes</h3>
+                      <div class="mt-2 mb-2">
+                        <kbd class="text-dark">local:</kbd>
+                        <span class="text-muted">Ex: Belo Horizonte</span>
+                      </div>
+                      <div class="mt-2 mb-2">
+                        <kbd class="text-dark">tipo:</kbd>
+                        <span class="text-muted">Pública ou Particular</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -161,122 +173,139 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="root">
-    <nav class="navbar left">
-      <div class="navbar-main">
-        <div class="navbar-logo">
-          <img src="./assets/img/icons/favicon.svg" alt="Icon">
-        </div>
-      </div>
-    </nav>
-
-    <nav class="navbar right">
-      <form action="#" method="POST">
-        <a class="btn" data-action="contribute" href="mailto:devgabrielribeiro@gmail.com?subject=Gostaria de contribuir com o Projeto&body=Sobre o Projeto 'Vestibulares'" rel="noopener noreferrer">Contribua</a>
-        <button type="button" data-action="active-search-vestibulares"><i class="bi bi-search"></i></button>
-      </form>
-    </nav>
-
-    <header class="header container" style="position: relative;">
-      <div class="banner">
-        <div class="d-flex justify-content-center flex-column" style="flex-grow: 2;">
-          <hgroup class="banner-titles">
-            <h1 class="title-h1">Seu <b class="bold">futuro aqui.</b></h1>
-            <h1 class="title-h1">Encontre vestibulares de todo o <b class="bold second">Brasil</b></h1>
-          </hgroup>
-          <div class="form-group">
-            <button class="btn" data-action="active-search-vestibulares"></button>
+    <div id="root">
+      <nav class="navbar left">
+        <div class="navbar-main">
+          <div class="navbar-logo">
+            <img src="./assets/img/icons/favicon.svg" alt="Icon">
           </div>
         </div>
+      </nav>
 
-        <div class="actions">
-          <button class="btn" data-action="search-ref" data-ref="Faculdades Públicas">Faculdades Públicas</button>
-          <button class="btn" data-action="search-ref" data-ref="Federal">Federal</button>
-          <button class="btn" data-action="search-ref" data-ref="Em destaque">Em destaque</button>
-        </div>
-      </div>
-    </header>
+      <nav class="navbar right">
+        <form action="#" method="POST">
+          <a class="btn" data-action="contribute"
+            href="mailto:devgabrielribeiro@gmail.com?subject=Gostaria de contribuir com o Projeto&body=Sobre o Projeto 'Vestibulares'"
+            rel="noopener noreferrer">Contribua</a>
+          <button type="button" data-action="active-search-vestibulares"><i class="bi bi-search"></i></button>
+        </form>
+      </nav>
 
-    <main class="main container">
-      <section id="elements-exibition">
-        <div class="form-group select-exibition">
-          <div>
-            <input type="radio" name="btn-check-exibition" class="btn-check" id="btn-check-destaque" autocomplete="off" checked data-action="select-exibition" data-ref="destaque">
-            <label class="btn btn-dark" for="btn-check-destaque">Destaque</label>
-          </div>
-          <div>
-            <input type="radio" name="btn-check-exibition" class="btn-check" id="btn-check-todos" autocomplete="off" data-action="select-exibition" data-ref="todos">
-            <label class="btn btn-dark" for="btn-check-todos">Todos</label>
-          </div>
-        </div>
-
-        <div class="search-elements-exibition mb-4">
-          <form action="#" method="POST" hidden>
-            <label for="search-element-exibition" class="label mb-1">Procure por um vestibular</label>
-            <div class="input-group">
-              <input type="text" id="search-element-exibition" name="search-element-exibition" placeholder="Vestibular da UFMG" class="form-control" data-action="search-element-exibition" autocomplete="off">
-              <button type="reset" class="btn btn-dark"><i class="bi bi-x-lg"></i></button>
+      <header class="header container" style="position: relative;">
+        <div class="banner">
+          <div class="d-flex justify-content-center flex-column" style="flex-grow: 2;">
+            <hgroup class="banner-titles">
+              <h1 class="title-h1">Seu <b class="bold">futuro aqui.</b></h1>
+              <h1 class="title-h1">Encontre vestibulares de todo o <b class="bold second">Brasil</b></h1>
+            </hgroup>
+            <div class="form-group">
+              <button class="btn" data-action="active-search-vestibulares"></button>
             </div>
-          </form>
-        </div>
-        <div class="cards" data-type-exams="destaque">
-        </div>
+          </div>
 
-        <div class="cards none" data-type-exams="todos">
-          <div class="card" aria-hidden="true">
-            <div class="card-header placeholder-glow">
-              <span class="placeholder col-6 mt-1 mb-1"></span>
+          <div class="actions">
+            <button class="btn" data-action="search-ref" data-ref="Faculdades Públicas">Faculdades Públicas</button>
+            <button class="btn" data-action="search-ref" data-ref="Federal">Federal</button>
+            <button class="btn" data-action="search-ref" data-ref="Em destaque">Em destaque</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="main container">
+        <section class="container mb-4 p-0">
+          <div class="alert alert-primary">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            &nbsp;<b>Importante:</b>&nbsp;Os vestibulares do projeto são apenas para fins de exemplificação, não
+            estando
+            disponíveis para inscrição no
+            momento.
+          </div>
+        </section>
+
+        <section id="elements-exibition">
+          <div class="form-group select-exibition">
+            <div>
+              <input type="radio" name="btn-check-exibition" class="btn-check" id="btn-check-destaque"
+                autocomplete="off" checked data-action="select-exibition" data-ref="destaque">
+              <label class="btn btn-dark" for="btn-check-destaque">Destaque</label>
             </div>
-            <div class="card-body">
-              <h3 class="card-title placeholder-glow">
-                <span class="placeholder col-10"></span>
-              </h3>
-              <p class="card-text placeholder-glow">
-                <span class="placeholder col-3"></span>
-                <span class="placeholder col-5"></span><br>
-                <span class="placeholder col-6"></span>
-                <span class="placeholder col-3"></span><br>
-              </p>
-              <p class="card-text placeholder-glow">
-                <span class="placeholder col-1"></span>
-                <span class="placeholder col-4"></span><br>
-                <span class="placeholder col-1"></span>
-                <span class="placeholder col-8"></span>
-              </p>
-              <div class="d-flex" style="gap: 0.4rem">
-                <a class="btn btn-success disabled placeholder col-5" aria-disabled="true"></a>
-                <a class="btn btn-secondary disabled placeholder col-5" aria-disabled="true"></a>
+            <div>
+              <input type="radio" name="btn-check-exibition" class="btn-check" id="btn-check-todos" autocomplete="off"
+                data-action="select-exibition" data-ref="todos">
+              <label class="btn btn-dark" for="btn-check-todos">Todos</label>
+            </div>
+          </div>
+
+          <div class="search-elements-exibition mb-4">
+            <form action="#" method="POST" hidden>
+              <label for="search-element-exibition" class="label mb-1">Procure por um vestibular</label>
+              <div class="input-group">
+                <input type="text" id="search-element-exibition" name="search-element-exibition"
+                  placeholder="Vestibular da UFMG" class="form-control" data-action="search-element-exibition"
+                  autocomplete="off">
+                <button type="reset" class="btn btn-dark"><i class="bi bi-x-lg"></i></button>
+              </div>
+            </form>
+          </div>
+          <div class="cards" data-type-exams="destaque">
+          </div>
+
+          <div class="cards none" data-type-exams="todos">
+            <div class="card" aria-hidden="true">
+              <div class="card-header placeholder-glow">
+                <span class="placeholder col-6 mt-1 mb-1"></span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title placeholder-glow">
+                  <span class="placeholder col-10"></span>
+                </h3>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-3"></span>
+                  <span class="placeholder col-5"></span><br>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-3"></span><br>
+                </p>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-1"></span>
+                  <span class="placeholder col-4"></span><br>
+                  <span class="placeholder col-1"></span>
+                  <span class="placeholder col-8"></span>
+                </p>
+                <div class="d-flex" style="gap: 0.4rem">
+                  <a class="btn btn-success disabled placeholder col-5" aria-disabled="true"></a>
+                  <a class="btn btn-secondary disabled placeholder col-5" aria-disabled="true"></a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <br>
-
-  <div id="load">
-    <div class="overlay">
-      <div class="spinner-first-load"></div>
+        </section>
+      </main>
     </div>
-  </div>
 
-  <!-- Footer -->
-  <!-- Estilizar -->
-  <div class="container">
-    <footer class="footer">
-      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 border-top">
-        <p><i class="bi bi-c-circle"></i>&nbsp;<span data-ano-atual>2023</span> Vestibulares. All rights reserved.</p>
+    <br>
+
+    <div id="load">
+      <div class="overlay">
+        <div class="spinner-first-load"></div>
       </div>
-    </footer>
-  </div>
+    </div>
 
-  <button class="btn btn-transparent" data-action="ir-para-o-topo"><i class="bi bi-arrow-up-circle"></i>&nbsp;Topo</button>
+    <!-- Footer -->
+    <!-- Estilizar -->
+    <div class="container">
+      <footer class="footer">
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 border-top">
+          <p><i class="bi bi-c-circle"></i>&nbsp;<span data-ano-atual>2023</span> Vestibulares. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
 
-  <script src="./assets/js/frameworks/highlights.js" crossorigin="anonymous"></script>
-  <script src="./assets/js/frameworks/moment.js"  crossorigin="anonymous"></script>
-</body>
+    <button class="btn btn-transparent" data-action="ir-para-o-topo"><i
+        class="bi bi-arrow-up-circle"></i>&nbsp;Topo</button>
+
+    <script src="./assets/js/frameworks/highlights.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/frameworks/moment.js" crossorigin="anonymous"></script>
+  </body>
+
 </html>
