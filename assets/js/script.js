@@ -43,140 +43,144 @@ import {
       if (elemento.dataset.action) {
         switch (elemento.dataset.action) {
           case 'acao':
-          $(elemento).on('click', () => {
-            acoes.acao();
-          });
-          break;
+            $(elemento).on('click', () => {
+              acoes.acao();
+            });
+            break;
 
           case 'contribute':
-          break;
+            break;
 
           case 'active-search-vestibulares':
-          $(elemento).on('click', (event) => {
-            event.preventDefault();
-            const modal = $('#modal-search');
-            $(modal).modal('show');
-            setTimeout(() => {
-              $(modal).find('input[type=search]').focus();
-            }, 500);
-          });
-          break;
+            $(elemento).on('click', (event) => {
+              event.preventDefault();
+              const modal = $('#modal-search');
+              $(modal).modal('show');
+              setTimeout(() => {
+                $(modal).find('input[type=search]').focus();
+              }, 500);
+            });
+            break;
 
           case 'select-exibition':
-          $(elemento).on('click', (event) => {
-            // Alternar entre os cards de destaque e todos
-            if (event.target.dataset.ref === 'destaque' || event.target.dataset.ref === 'todos') {
-              const destaqueCards = $('section#elements-exibition .cards[data-type-exams="destaque"]');
-              const todosCards = $('section#elements-exibition .cards[data-type-exams="todos"]');
+            $(elemento).on('click', (event) => {
+              // Alternar entre os cards de destaque e todos
+              if (event.target.dataset.ref === 'destaque' || event.target.dataset.ref === 'todos') {
+                const destaqueCards = $('section#elements-exibition .cards[data-type-exams="destaque"]');
+                const todosCards = $('section#elements-exibition .cards[data-type-exams="todos"]');
 
-              if (destaqueCards.length === 1 && todosCards.length === 1) {
-                $(destaqueCards).toggleClass('none');
-                $(todosCards).toggleClass('none');
-                console.log(event.target.parentElement.querySelector('label'));
+                if (destaqueCards.length === 1 && todosCards.length === 1) {
+                  if (event.target.parentElement.querySelector('label').getAttribute('for') === 'btn-check-destaque') {
+                    $(destaqueCards).removeClass('none');
+                    $(todosCards).addClass('none');
+                  } else if (event.target.parentElement.querySelector('label').getAttribute('for') === 'btn-check-todos') {
+                    $(destaqueCards).addClass('none');
+                    $(todosCards).removeClass('none');
+                  }
+                }
               }
-            }
-          });
-          break;
+            });
+            break;
 
           case 'search-element-exibition':
-          $(elemento).on('input', (event) => {
-            acoes.searchElementExibition(event, database);
-          });
-          break;
+            $(elemento).on('input', (event) => {
+              acoes.searchElementExibition(event, database);
+            });
+            break;
 
           case 'report-error':
-          $(elemento).on('click', () => {
-            if (['Informação incorreta', 'Inscrição encerrada', 'Link quebrado', 'Outro'].includes(elemento.dataset.ref)) {
-              const [buttonID, cardID] = [elemento.closest('.dropdown').querySelector('button').dataset.id, elemento.closest('.modal-content').dataset.id];
+            $(elemento).on('click', () => {
+              if (['Informação incorreta', 'Inscrição encerrada', 'Link quebrado', 'Outro'].includes(elemento.dataset.ref)) {
+                const [buttonID, cardID] = [elemento.closest('.dropdown').querySelector('button').dataset.id, elemento.closest('.modal-content').dataset.id];
 
-              if (buttonID === cardID && database.find((item) => parseInt(item.id, 10) === parseInt(buttonID, 10))) {
-                try {
-                  window.open(`mailto:devgabrielribeiro@gmail.com?subject=${elemento.dataset.ref} - Vestibular ${`00000${buttonID}`.slice(-5)}&body=Olá, encontrei um erro no vestibular ${`00000${buttonID}`.slice(-5)} e gostaria de reportar.`, '_blank', 'noopener noreferrer');
-                } catch (error) {
-                  Swal.fire({ title: 'Um erro ocorreu ao tentar reportar o erro', icon: 'error' });
+                if (buttonID === cardID && database.find((item) => parseInt(item.id, 10) === parseInt(buttonID, 10))) {
+                  try {
+                    window.open(`mailto:devgabrielribeiro@gmail.com?subject=${elemento.dataset.ref} - Vestibular ${`00000${buttonID}`.slice(-5)}&body=Olá, encontrei um erro no vestibular ${`00000${buttonID}`.slice(-5)} e gostaria de reportar.`, '_blank', 'noopener noreferrer');
+                  } catch (error) {
+                    Swal.fire({ title: 'Um erro ocorreu ao tentar reportar o erro', icon: 'error' });
+                  }
                 }
               }
-            }
-          });
-          break;
+            });
+            break;
 
           case 'search-vestibulares':
-          $(elemento).on('submit', (event) => {
-            event.preventDefault();
-            const value = event.target.querySelector('input[type=search]').value.trim();
-            const area = $('#modal-search .search-elements-exibition .cards');
+            $(elemento).on('submit', (event) => {
+              event.preventDefault();
+              const value = event.target.querySelector('input[type=search]').value.trim();
+              const area = $('#modal-search .search-elements-exibition .cards');
 
-            if (value) {
-              const vestibulares = fns.searchVestibulares(value, database);
-              $(area).find('.card:not(.card-info)').remove();
-              $(area).find('.card.zero-results').remove();
+              if (value) {
+                const vestibulares = fns.searchVestibulares(value, database);
+                $(area).find('.card:not(.card-info)').remove();
+                $(area).find('.card.zero-results').remove();
 
-              if (vestibulares.length > 0) {
-                vestibulares.forEach((exam) => {
-                  $(area).append(card(exam));
-                  // Carregar tooltips
-                  criarTooltips();
-                  tooltips();
-                });
+                if (vestibulares.length > 0) {
+                  vestibulares.forEach((exam) => {
+                    $(area).append(card(exam));
+                    // Carregar tooltips
+                    criarTooltips();
+                    tooltips();
+                  });
+                } else {
+                  // if ($(area).find(''))
+                  $(area).append(card_no_results);
+                }
               } else {
-                // if ($(area).find(''))
-                $(area).append(card_no_results);
+                // Carregar novamente os conteúdos iniciais
+                fns.loadAllExams({ card_no_exams, card }, database);
               }
-            } else {
-              // Carregar novamente os conteúdos iniciais
-              fns.loadAllExams({ card_no_exams, card }, database);
-            }
-          });
-          break;
+            });
+            break;
 
           case 'search-ref':
-          $(elemento).on('click', (event) => {
-            event.preventDefault();
-            const modal = $('#modal-search');
-            const inputSearch = $('#modal-search input[type=search]');
+            $(elemento).on('click', (event) => {
+              event.preventDefault();
+              const modal = $('#modal-search');
+              const inputSearch = $('#modal-search input[type=search]');
 
-            if (event.target.dataset.ref.match(/(Faculdades Públicas|Federal|Em destaque)/)) {
-              switch (event.target.dataset.ref) {
-                case 'Faculdades Públicas':
-                $(inputSearch).val('tipo:publica');
-                inputSearch.closest('form').submit();
-                $(modal).modal('show');
-                break;
-                case 'Federal':
-                $(inputSearch).val('Federal');
-                inputSearch.closest('form').submit();
-                $(modal).modal('show');
-                break;
-                case 'Em destaque':
-                //
-                const btnCheckDestaque = $('#btn-check-destaque')[0];
+              if (event.target.dataset.ref.match(/(Faculdades Públicas|Federal|Em destaque)/)) {
+                switch (event.target.dataset.ref) {
+                  case 'Faculdades Públicas':
+                    $(inputSearch).val('tipo:publica');
+                    inputSearch.closest('form').submit();
+                    $(modal).modal('show');
+                    break;
+                  case 'Federal':
+                    $(inputSearch).val('Federal');
+                    inputSearch.closest('form').submit();
+                    $(modal).modal('show');
+                    break;
+                  case 'Em destaque':
+                    //
+                    const btnCheckDestaque = $('#btn-check-destaque')[0];
 
-                if (btnCheckDestaque.checked) {
-                  btnCheckDestaque.click();
+                    if (btnCheckDestaque.checked) {
+                      btnCheckDestaque.click();
+                    }
+
+                    window.scrollTo({ top: btnCheckDestaque.offsetTop - $('.navbar.left')[0].offsetHeight, behavior: 'smooth' });
+                    break;
+                  default:
+                    //
+                    break;
                 }
-
-                window.scrollTo({ top: btnCheckDestaque.offsetTop - $('.navbar.left')[0].offsetHeight, behavior: 'smooth' });
-                break;
-                default:
+              } else {
                 //
-                break;
               }
-            } else {
-              //
-            }
-          });
-          break;
+            });
+            break;
 
           case 'ir-para-o-topo':
-          $(elemento).on('click', (event) => {
-            event.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          });
-          break;
+            $(elemento).on('click', (event) => {
+              event.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            break;
 
           default:
-          console.warn('A ação %s não foi implementada.', elemento.dataset.action);
-          break;
+            console.warn('A ação %s não foi implementada.', elemento.dataset.action);
+            break;
         }
       }
     };
@@ -235,15 +239,15 @@ import {
       $('.cards').append(card_load.trim());
 
       fetch('./assets/js/modules/database.json')
-      .then((response) => response.json())
-      .then(({ vestibules }) => {
-        database = vestibules;
-        fns.loadAllExams({ card_no_exams, card }, vestibules);
-      })
-      .catch((error) => console.error(error))
-      .finally(() => {
-        loadFuncionsPage();
-      });
+        .then((response) => response.json())
+        .then(({ vestibules }) => {
+          database = vestibules;
+          fns.loadAllExams({ card_no_exams, card }, vestibules);
+        })
+        .catch((error) => console.error(error))
+        .finally(() => {
+          loadFuncionsPage();
+        });
     }
 
     // Scroll
